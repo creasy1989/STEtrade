@@ -1,0 +1,13 @@
+.button_add_item_green {
+    background-color: green;
+	color: white;
+	width: 150px;
+	height: 40px;
+}
+
+.button_add_item_grey {
+    background-color: grey;
+	color: white;
+	width: 150px;
+	height: 40px;
+}

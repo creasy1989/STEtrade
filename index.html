@@ -1,0 +1,103 @@
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="scr\jquery.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link href="site.css" rel="stylesheet">
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td valign="top">
+                <button id="startWork">Начать работу</button>
+                <br>
+                Валюта                                                
+                <select class="settings" size="1" id="currency">
+                    <option value="5">Рубли</option>
+                    <option value="1">Доллары</option>
+                </select>
+                <br>
+                Проверять заказы каждые (минут)<input class="settings" type="number" name="getOrdersRefreshTime">
+                <br>
+                Проверять инвентарь каждые (минут)<input class="settings" type="number" name="sellInventoryRefreshTime">
+                <br>
+                Обновлять предметы на продаже (минут)<input class="settings" type="number" name="itemsOnSaleRefreshTime">
+                <br>
+                <input class="settings" type="checkbox" name="AOSettings">
+                Делать анализ перед выставлением заказа                <br>
+                <input class="settings" type="checkbox" name="autoIncOrders" checked>
+                Автоинкремент заказа                                                
+                <td rowspan="2" valign="top">
+                    <div id="settingsAnalyzer">
+                        Желаемый процент профита <input class="settings" type="number" name="profitPercent">
+                        <input class="settings" type="number" name="minProfit">
+                        <br>
+                        Продаж в день за месяц <input class="settings" type="number" name="cntSalesMonth">
+                        <br>
+                        Минимум продаж в час <input class="settings" type="number" name="countSalesHour">
+                        <br>
+                        Период анализа<input class="settings" type="radio" checked name="countDayHistoryGraph">
+                        Неделя<input class="settings" type="radio" name="countDayHistoryGraph">
+                        Месяц                        <br>
+                        Процент коридора <input class="settings" type="number" name="percentLimit">
+                        <br>
+                        Алгоритм                        
+                        <select class="settings" size="1" id="algoritm">
+                            <option value="HG">High garant</option>
+                            <option value="HSG">High safe garant</option>
+                            <option value="AVG">Avg garant</option>
+                            <option value="LG">Low garant</option>
+                            <option value="BG">Buy garant</option>
+                        </select>
+                        <br>
+                        <br>
+                        Коэф стакана <input class="settings" type="number" name="ordersPlace">
+                        Место в листинге <input class="settings" type="number" name="listingPlace">
+                        <br>
+                        Снимать с продажи через дней:<input class="settings" type="number" name="removeFromSaleDays">
+                        <br>
+                        Игра: <input type="string" size=4 id="appidForAnalysis">
+                        Файл: <input type="string" size=4 id="fileForAnalysis">
+                        <button id="analyseFile">Начать анализ</button>
+                        <br>
+                        <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
+                    </div>
+                </td>
+            </td>
+            <td rowspan="5" valign="top">
+                <button id="clearLogs">Очистить логи</button>
+                <div id="log" class="overflow"></div>
+                Syslog:                <div id="syslog" class="overflow"></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CS: GO            <br>
+                <input class="settings" type="checkbox" name="sellWithStickers" unchecked>
+                Продавать с наклейками                  <br>
+                Процент наценки <input class="settings" type="number" name="sticker_percent">
+                <br>
+                Минимальная наценка на стикеры<input class="settings" type="number" name="sticker_overprice">
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="2" valign="top">
+                <button id="deleteItems">Удалить отмеченные из базы</button>
+                <br>
+                <br>
+                Вкл/откл отмеченные ордера <button id="on_work_on">Вкл</button>
+                <button id="on_work_off">Выкл</button>
+                <br>
+                <button class="addGroup" id="addGroup">Создать группу</button>
+                <br>
+                <button id="deleteOrders">Удалить отмеченные ордера</button>
+                <button id="checkItems">Выделить между отмеченных</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" valign="top">
+                <div id="dataTable"></div>
+            </td>
+        </tr>
+    </table>
+</body>

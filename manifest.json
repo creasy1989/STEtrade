@@ -1,0 +1,62 @@
+{
+    "background": {
+        "scripts": [
+            "index.js"
+        ]
+    },
+    "manifest_version": 2,
+    "name": "STEtrade",
+    "description": "Автоматическая покупка/продажа предметов steam",
+    "version": "1.14",
+    "icons": {      
+	  "96": "ico/favicon-96x96.png",
+	  "128": "ico/favicon-128x128.png",
+	  "256": "ico/favicon-256x256.png",
+	  "48": "ico/favicon-48x48.png",
+	  "96": "ico/favicon-72x72.png",
+	  "64": "ico/favicon-64x64.png",
+      "32": "ico/favicon-32x32.png",
+	  "512": "ico/favicon-512x512.png"
+    },		
+    "content_scripts": [{
+            "all_frames": true,
+            "js": [
+                "scr/script_market.js",
+                "scr/jquery.js"
+            ],
+			"css":["scr/site.css"],
+            "matches": [
+                "http://steamcommunity.com/*",
+                "http://*.steamcommunity.com/*",
+                "https://steamcommunity.com/*"
+            ],
+            "run_at": "document_end"
+        },
+        {
+            "all_frames": true,
+            "js": [
+                "scr/script_listings.js"
+            ],
+            "matches": [
+                "https://steamcommunity.com/market/listings/*"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "browser_action": {
+        "default_page": "index.html"
+    },
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "permissions": [
+        "http://steamcommunity.com/*",
+        "http://*.steamcommunity.com/*",
+        "https://steamcommunity.com/*",
+        "https://*.steamcommunity.com/*",
+		"https://sms.ru/sms/send" ,
+        "notifications",
+        "cookies",
+        "tabs",
+        "browsingData",
+        "storage"
+    ]
+}
