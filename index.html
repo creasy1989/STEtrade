@@ -2,6 +2,10 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="background.js"></script>
+    <script type="text/javascript" src="steam.js"></script>
+    <script type="text/javascript" src="local.js"></script>
+    <script type="text/javascript" src="local_analyzer.js"></script>
     <link href="site.css" rel="stylesheet">
 </head>
 <body>
@@ -25,7 +29,9 @@
                 <input class="settings" type="checkbox" name="AOSettings">
                 Делать анализ перед выставлением заказа                <br>
                 <input class="settings" type="checkbox" name="autoIncOrders" checked>
-                Автоинкремент заказа                                                
+                Автоинкремент заказа
+                <input class="settings" type="checkbox" name="ignoreMissing">
+                Игнор отсутсвующих                
                 <td rowspan="2" valign="top">
                     <div id="settingsAnalyzer">
                         Желаемый процент профита <input class="settings" type="number" name="profitPercent">
