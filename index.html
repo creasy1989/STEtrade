@@ -1,109 +1,242 @@
 <head>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+
+
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
-    <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="background.js"></script>
-    <script type="text/javascript" src="steam.js"></script>
-    <script type="text/javascript" src="local.js"></script>
-    <script type="text/javascript" src="local_analyzer.js"></script>
+    <script type="text/javascript" src="index.js"></script>    
     <link href="site.css" rel="stylesheet">
+    <title>STEtrade</title>
 </head>
+
 <body>
-    <table border="1px">
-        <tr>
-            <td valign="top">
-                <button id="startWork">Начать работу</button>
-                <br>
-                Валюта                                                
-                <select class="settings" size="1" id="currency">
-                    <option value="5">Рубли</option>
-                    <option value="1">Доллары</option>
-                </select>
-                <br>
-                Проверять заказы каждые (минут)<input class="settings" type="number" name="getOrdersRefreshTime">
-                <br>
-                Проверять инвентарь каждые (минут)<input class="settings" type="number" name="sellInventoryRefreshTime">
-                <br>
-                Обновлять предметы на продаже (минут)<input class="settings" type="number" name="itemsOnSaleRefreshTime">
-                <br>
-                <input class="settings" type="checkbox" name="AOSettings">
-                Делать анализ перед выставлением заказа                <br>
-                <input class="settings" type="checkbox" name="autoIncOrders" checked>
-                Автоинкремент заказа
-                <input class="settings" type="checkbox" name="ignoreMissing">
-                Игнор отсутсвующих                
-                <td rowspan="2" valign="top">
-                    <div id="settingsAnalyzer">
-                        Желаемый процент профита <input class="settings" type="number" name="profitPercent">
-                        <input class="settings" type="number" name="minProfit">
-                        <br>
-                        Продаж в день за месяц <input class="settings" type="number" name="cntSalesMonth">
-                        <br>
-                        Минимум продаж в час <input class="settings" type="number" name="countSalesHour">
-                        <br>
-                        Период анализа<input class="settings" type="radio" checked name="countDayHistoryGraph">
-                        Неделя<input class="settings" type="radio" name="countDayHistoryGraph">
-                        Месяц                        <br>
-                        Процент коридора <input class="settings" type="number" name="percentLimit">
-                        <br>
-                        Алгоритм                        
-                        <select class="settings" size="1" id="algoritm">
-                            <option value="HG">High garant</option>
-                            <option value="HSG">High safe garant</option>
-                            <option value="AVG">Avg garant</option>
-                            <option value="LG">Low garant</option>
-                            <option value="BG">Buy garant</option>
-                        </select>
-                        <br>
-                        <br>
-                        Коэф стакана <input class="settings" type="number" name="ordersPlace">
-                        Место в листинге <input class="settings" type="number" name="listingPlace">
-                        <br>
-                        Снимать с продажи через дней:<input class="settings" type="number" name="removeFromSaleDays">
-                        <br>
-                        Игра: <input type="string" size=4 id="appidForAnalysis">
-                        Файл: <input type="string" size=4 id="fileForAnalysis">
-                        <button id="analyseFile">Начать анализ</button>
-                        <br>
-                        <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
+    <div id="wrapper">
+
+        <header>
+            <div class="inner">
+                <a class="logo">STEtrade</a>
+
+                <ul class="socials">
+                    <li class="vk">
+                        <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+        <section id="content">
+            <section id="trade-sett">
+                <div class="inner">
+                    <div id="settings">
+
+                        <div class="settings-block">
+                            <div class="main-settings sett-coll">
+                                <button id="startWork">Начать работу</button>
+                                <div class="row check" id="AOSettings">
+                                    <label for="AOSettings">ПРО версия</label>
+
+                                    <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
+
+                                </div>
+                                <div class="row">
+                                    <label for="currency">Валюта </label>
+
+                                    <select class="settings" size="1" id="currency">
+                                            <option value="5">Рубли</option>
+                                            <option value="1">Доллары</option>
+                                        </select>
+                                </div>
+                                <div class="row num">
+                                    <label for="getOrdersRefreshTime"> Проверять заказы каждые (мин)</label>
+                                    <div class="min-row">
+                                        <input class="settings" type="number" name="getOrdersRefreshTime" id="getOrdersRefreshTime">
+                                        <label id="getOrdersRefreshTimeLable" class="time-mark"></label>
+                                    </div>
+                                </div>
+                                <div class="row num">
+                                    <label for="sellInventoryRefreshTime"> Проверять инвентарь каждые (мин)</label>
+                                    <div class="min-row">
+                                        <input class="settings" type="number" name="sellInventoryRefreshTime" id="sellInventoryRefreshTime">
+                                        <label id="sellInventoryRefreshTimeLable" class="time-mark"></label>
+                                    </div>
+                                </div>
+                                <div class="row num">
+                                    <label for="itemsOnSaleRefreshTime">Обновлять предметы на продаже (мин)</label>
+                                    <div class="min-row">
+                                        <input class="settings" type="number" name="itemsOnSaleRefreshTime" id="itemsOnSaleRefreshTime">
+                                        <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
+                                    </div>
+                                </div>
+
+                                <div class="row check">
+                                    <label for="autoIncOrders"> Автоинкремент заказа</label>
+                                    <input class="settings" type="checkbox" name="autoIncOrders" checked id="autoIncOrders">
+
+                                </div>
+                                <div class="row check">
+                                    <label for="ignoreMissing"> Игнор отсутсвующих </label>
+                                    <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
+
+                                </div>
+
+
+                                <div class="cs coll">
+                                    <h4>CS: GO </h4>
+                                    <div class="row check">
+                                        <label for="sellWithStickers">Продавать с наклейками </label>
+                                        <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
+
+                                    </div>
+                                    <div class="row num">
+                                        <label for="sticker_percent">Процент наценки</label>
+                                        <input class="settings" type="number" name="sticker_percent" id="sticker_percent">
+                                    </div>
+                                    <div class="row num">
+                                        <label for="sticker_overprice">Минимальная наценка на стикеры</label>
+                                        <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="settingsAnalyzer" class="sett-coll">
+
+                                <div class="sett-coll">
+
+                                    <div class="row num">
+                                        <label for="">Желаемый процент профита</label>
+                                        <div class="min-row" style="justify-content: flex-end;">
+                                            <input class="settings" type="number" name="profitPercent">
+                                            <input class="settings" type="number" name="minProfit">
+                                        </div>
+                                    </div>
+
+                                    <div class="row num">
+                                        <label for=""> Минимум продаж в час </label>
+                                        <input class="settings" type="number" name="countSalesHour">
+                                    </div>
+                                    <div class="row">
+                                        <label for=""> Период анализа</label>
+                                        <div class="mon-row">
+                                            <div class="row"><input class="settings" type="radio" checked name="countDayHistoryGraph">
+                                                <label for=""> Неделя</label>
+                                            </div>
+                                            <div class="row">
+                                                <input class="settings" type="radio" name="countDayHistoryGraph">
+                                                <label for=""> Месяц</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row num">
+                                        <label for="">Процент коридора </label>
+                                        <input class="settings" type="number" name="percentLimit">
+                                    </div>
+                                    <div class="row" style="flex-wrap: wrap;">
+                                        <label for="algoritm">Алгоритм</label>
+
+                                        <select class="settings" size="1" id="algoritm">
+                                        <option value="HG">High garant</option>
+                                        <option value="HSG">High safe garant</option>
+                                        <option value="AVG">Avg garant</option>
+                                        <option value="LG">Low garant</option>
+                                        <option value="BG">Buy garant</option>
+                                    </select>
+                                    </div>
+                                </div>
+                                <div class="sett-coll">
+                                    <div class="sett-col">
+                                        <div class="row num">
+                                            <label for="ordersPlace"> Коэф стакана </label>
+                                            <input class="settings" type="number" name="ordersPlace" id="ordersPlace">
+                                        </div>
+                                        <div class="row num">
+                                            <label for=""> Продаж в день за месяц </label>
+                                            <input class="settings" type="number" name="cntSalesMonth">
+                                        </div>
+                                        <div class="row num">
+                                            <label for="listingPlace"> Место в листинге</label>
+                                            <input class="settings" type="number" name="listingPlace" id="listingPlace">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="sett-coll">
+                                    <div class="row num">
+                                        <label for="removeFromSaleDays"> Снимать с продажи через дней:</label>
+                                        <input class="settings" type="number" name="removeFromSaleDays" id="removeFromSaleDays">
+                                    </div>
+                                </div>
+                                <div class="sett-coll">
+                                    <div class="row">
+                                        <div class="min-row">
+                                            <label for="appidForAnalysis"> Игра: </label>
+                                            <input type="string" size=4 id="appidForAnalysis">
+
+                                        </div>
+                                        <div class="min-row">
+                                            <label for="fileForAnalysis">Файл:</label>
+                                            <input type="string" size=4 id="fileForAnalysis">
+                                        </div>
+                                    </div>
+                                    <button id="analyseFile">Начать анализ</button>
+                                </div>
+                            </div>
+                            <div class="logs">
+
+                                <button id="clearLogs">Очистить логи</button>
+
+                                <div id="log" class="overflow"></div>
+                            </div>
+                        </div>
                     </div>
-                </td>
-            </td>
-            <td rowspan="5" valign="top">
-                <button id="clearLogs">Очистить логи</button>
-                <div id="log" class="overflow"></div>
-                Syslog:                <div id="syslog" class="overflow"></div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                CS: GO            <br>
-                <input class="settings" type="checkbox" name="sellWithStickers" unchecked>
-                Продавать с наклейками                  <br>
-                Процент наценки <input class="settings" type="number" name="sticker_percent">
-                <br>
-                Минимальная наценка на стикеры<input class="settings" type="number" name="sticker_overprice">
-            </td>
-        </tr>
-        <tr></tr>
-        <tr>
-            <td colspan="2" valign="top">
-                <button id="deleteItems">Удалить отмеченные из базы</button>
-                <br>
-                <br>
-                Вкл/откл отмеченные ордера <button id="on_work_on">Вкл</button>
-                <button id="on_work_off">Выкл</button>
-                <br>
-                <button class="addGroup" id="addGroup">Создать группу</button>
-                <br>
-                <button id="deleteOrders">Удалить отмеченные ордера</button>
-                <button id="checkItems">Выделить между отмеченных</button>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" valign="top">
-                <div id="dataTable"></div>
-            </td>
-        </tr>
-    </table>
+                </div>
+            </section>
+            <section id="trade-table">
+                <div class="inner">
+                    <table border="1px">
+                        <tr>
+                            <td colspan="2" valign="top" class="table-setting">
+                                <button id="deleteItems">Удалить отмеченные из базы</button>
+                                <button id="deleteOrders">Удалить отмеченные ордера</button>
+                                <div class="btn-group">
+                                    Вкл/откл отмеченные ордера
+                                    <div class="btn-row">
+                                        <button id="on_work_on">Вкл</button>
+                                        <button id="on_work_off">Выкл</button>
+                                    </div>
+                                </div>
+                                <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
+                                <button class="addGroup" id="addGroup">Создать группу</button>
+                                <button id="checkItems">Выделить между отмеченных</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" valign="top">
+                                <div id="dataTable"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+    </div>
+    </section>
+    </section>
+    <form id="theme-set">
+        <div class="theme-btn">Тема</div>
+
+        <div>
+            <div>
+                <input type="radio" id="themeChoice1" name="theme" value="Classic">
+                <label for="themeChoice1">Classic</label>
+            </div>
+
+            <div>
+                <input type="radio" id="themeChoice3" name="theme" value="Steam">
+                <label for="themeChoice3">Dark</label>
+            </div>
+            <div>
+                <div id="themeSetup" type="submit" style="display: none;">Изменить</div>
+            </div>
+        </div>
+    </form>
 </body>

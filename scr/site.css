@@ -1,13 +1,53 @@
 .button_add_item_green {
     background-color: green;
-	color: white;
-	width: 150px;
-	height: 40px;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #008e2c;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    transition: .3s all;
+    background: linear-gradient(rgb(37, 232, 24), rgb(72, 148, 47)) rgb(43, 183, 53);
+    box-shadow: 0 1px rgba(255, 255, 255, .2) inset, 0 3px 5px rgba(65, 125, 41, 0.5), 0 0 1px 1px rgba(0, 1, 6, .2);
+    font-weight: 600;
+}
+
+.button_add_item_green:hover {
+    background: #006d22
 }
 
 .button_add_item_grey {
     background-color: grey;
-	color: white;
-	width: 150px;
-	height: 40px;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #008e2c;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    transition: .3s all;
+    background: #6a727a;
+    box-shadow: 0 1px #6a727a;
+    font-weight: 600;
+}
+
+# .button_add_item_grey:hover {
+    background: 2e343a;
 }
