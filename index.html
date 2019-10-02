@@ -3,11 +3,15 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
-
+<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>    
+    <script type="text/javascript" src="background.js"></script>
+    <script type="text/javascript" src="steam.js"></script>
+    <script type="text/javascript" src="local.js"></script>
+    <script type="text/javascript" src="local_analyzer.js"></script>
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
@@ -99,6 +103,8 @@
                                         <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                     </div>
                                 </div>
+                                <input type="date" id="profitDate">
+                                <button id="profit">Профит</button>
                             </div>
                             <div id="settingsAnalyzer" class="sett-coll">
 
@@ -188,7 +194,9 @@
 
                                 <div id="log" class="overflow"></div>
                             </div>
+
                         </div>
+                           <div class="close-setting-btn">Скрыть настройки</div>
                     </div>
                 </div>
             </section>
@@ -239,4 +247,5 @@
             </div>
         </div>
     </form>
+    <div id="to_top"><i class="fa fa-angle-double-up"></i></div>
 </body>

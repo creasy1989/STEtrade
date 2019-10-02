@@ -495,15 +495,46 @@ input[type=number] {
 
 #trade-sett {
     background-color: #d9d9d9;
+        box-shadow: 2px 5px 18px rgba(122, 122, 122, 0.15);
 }
-
+#settings{
+    position: relative;
+}
 .settings-block {
     display: flex;
     padding: 20px;
     position: relative;
+    transition: .3s all;
     /* justify-content: space-between; */
 }
-
+.settings-block.hide-setting{
+        height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+.close-setting-btn{
+   display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    background-color: #815bb4;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.close-setting-btn:hover{
+    background-color: #817bc9 !important;
+}
+.close-setting-btn{
+    opacity: 1;
+}
 .settings-block>div {
     margin-right: 1.5%;
 }
@@ -611,7 +642,9 @@ input[type=number] {
     text-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
     cursor: pointer;
 }
-
+#analyseFile:hover,#clearLogs:hover{
+    background: #817bc9 !important;
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -694,6 +727,28 @@ button#startWork.working:hover {
 button#startWork:focus {
     border: none;
     outline-color: transparent;
+}
+
+
+#to_top {
+    color: #979797;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+    left: 0;
+    opacity: 0.8;
+    position: fixed;
+    text-align: center;
+    bottom: 340px;
+    font-size: 48px;
+    display: none;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+        margin-left: auto;
+    width: fit-content;
+}
+#to_top:hover{
+    color: rgb(129, 91, 180);;
 }
 
 /*END БЛОК настроек */
@@ -1007,7 +1062,9 @@ body.steam .tab tr {
 body.steam .tab tr:nth-child(odd) {
     background-color: rgba(7, 8, 10, 0.12)
 }
-
+body.steam .tab tr:nth-child(odd):hover {
+    background-color: rgba(0, 0, 0, 0.12);
+}
 body.steam .tab tr:nth-child(odd):hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -1047,6 +1104,12 @@ body.steam div.sell_msg{
 
 body.steam div.filter_msg{
     background-color: #ec5353;
+}
+body.steam .close-setting-btn{
+  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
+}
+body.steam .table-setting>button:hover,body.steam  .table-setting .btn-row>button:hover,body.steam .close-setting-btn:hover,body.steam #analyseFile:hover, body.steam #clearLogs:hover{
+    background: #1d2024 !important;
 }
 /* END ТЕмная тема */
 
