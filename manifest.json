@@ -1,13 +1,14 @@
 {
     "background": {
         "scripts": [
-            "index.js"
+            "scr/jquery.js",
+			"index.js"			
         ]
     },
     "manifest_version": 2,
-    "name": "STEtrade_v1.17",
+    "name": "STEtrade_v1.18",
     "description": "Автоматическая покупка/продажа предметов steam",
-    "version": "1.17",
+    "version": "1.18",
     "icons": {      
 	  "96": "ico/favicon-96x96.png",
 	  "128": "ico/favicon-128x128.png",

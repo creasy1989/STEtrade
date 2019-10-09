@@ -99,8 +99,8 @@
                                         <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                     </div>
                                 </div>
-                                <input type="date" id="profitDate">
-                                <button id="profit">Профит</button>
+                                <input hidden = "true" type="date" id="profitDate">
+                                <button hidden = "true" id="profit">Профит</button>
                                 <br>
                                 <label id = "balance"></label>
                                 <label id = "on_sale_sum"></label>
@@ -214,7 +214,7 @@
                                     </div>
                                 </div>
                                 <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
-                                <label for="updateItemsPrices_settings">Исключая "в работе"</label>
+                                <label id = "updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
                                 
                                 <button class="addGroup" id="addGroup">Создать группу</button>
