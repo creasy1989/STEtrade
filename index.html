@@ -3,27 +3,22 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
-    <script type="text/javascript" src="index.js"></script>    
+    <script type="text/javascript" src="index.js"></script>
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
-
 <body>
     <div id="wrapper">
-
         <header>
             <div class="inner">
                 <a class="logo">STEtrade</a>
-
                 <ul class="socials">
                     <li class="vk">
                         <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
                     </li>
-
                 </ul>
             </div>
         </header>
@@ -31,33 +26,29 @@
             <section id="trade-sett">
                 <div class="inner">
                     <div id="settings">
-
                         <div class="settings-block">
                             <div class="main-settings sett-coll">
                                 <button id="startWork">Начать работу</button>
                                 <div class="row check" id="AOSettings">
                                     <label for="AOSettings">ПРО версия</label>
-
                                     <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
-
                                 </div>
                                 <div class="row">
                                     <label for="currency">Валюта </label>
-
                                     <select class="settings" size="1" id="currency">
-                                            <option value="5">Рубли</option>
-                                            <option value="1">Доллары</option>
-                                        </select>
+                                        <option value="5">Рубли</option>
+                                        <option value="1">Доллары</option>
+                                    </select>
                                 </div>
                                 <div class="row num">
-                                    <label for="getOrdersRefreshTime"> Проверять заказы каждые (мин)</label>
+                                    <label for="getOrdersRefreshTime">Проверять заказы каждые (мин)</label>
                                     <div class="min-row">
                                         <input class="settings" type="number" name="getOrdersRefreshTime" id="getOrdersRefreshTime">
                                         <label id="getOrdersRefreshTimeLable" class="time-mark"></label>
                                     </div>
                                 </div>
                                 <div class="row num">
-                                    <label for="sellInventoryRefreshTime"> Проверять инвентарь каждые (мин)</label>
+                                    <label for="sellInventoryRefreshTime">Проверять инвентарь каждые (мин)</label>
                                     <div class="min-row">
                                         <input class="settings" type="number" name="sellInventoryRefreshTime" id="sellInventoryRefreshTime">
                                         <label id="sellInventoryRefreshTimeLable" class="time-mark"></label>
@@ -70,25 +61,19 @@
                                         <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
                                     </div>
                                 </div>
-
                                 <div class="row check">
-                                    <label for="autoIncOrders"> Автоинкремент заказа</label>
+                                    <label for="autoIncOrders">Автоинкремент заказа</label>
                                     <input class="settings" type="checkbox" name="autoIncOrders" checked id="autoIncOrders">
-
                                 </div>
                                 <div class="row check">
-                                    <label for="ignoreMissing"> Игнор отсутсвующих </label>
+                                    <label for="ignoreMissing">Игнор отсутсвующих </label>
                                     <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
-
                                 </div>
-
-
                                 <div class="cs coll">
                                     <h4>CS: GO </h4>
                                     <div class="row check">
                                         <label for="sellWithStickers">Продавать с наклейками </label>
                                         <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
-
                                     </div>
                                     <div class="row num">
                                         <label for="sticker_percent">Процент наценки</label>
@@ -99,16 +84,14 @@
                                         <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                     </div>
                                 </div>
-                                <input hidden = "true" type="date" id="profitDate">
-                                <button hidden = "true" id="profit">Профит</button>
+                                <input hidden="true" type="date" id="profitDate">
+                                <button hidden="true" id="profit">Профит</button>
                                 <br>
-                                <label id = "balance"></label>
-                                <label id = "on_sale_sum"></label>
+                                <label id="balance"></label>
+                                <label id="on_sale_sum"></label>
                             </div>
                             <div id="settingsAnalyzer" class="sett-coll">
-
                                 <div class="sett-coll">
-
                                     <div class="row num">
                                         <label for="">Желаемый процент профита</label>
                                         <div class="min-row" style="justify-content: flex-end;">
@@ -116,20 +99,20 @@
                                             <input class="settings" type="number" name="minProfit">
                                         </div>
                                     </div>
-
                                     <div class="row num">
-                                        <label for=""> Минимум продаж в час </label>
+                                        <label for="">Минимум продаж в час </label>
                                         <input class="settings" type="number" name="countSalesHour">
                                     </div>
                                     <div class="row">
-                                        <label for=""> Период анализа</label>
+                                        <label for="">Период анализа</label>
                                         <div class="mon-row">
-                                            <div class="row"><input class="settings" type="radio" checked name="countDayHistoryGraph">
-                                                <label for=""> Неделя</label>
+                                            <div class="row">
+                                                <input class="settings" type="radio" checked name="countDayHistoryGraph">
+                                                <label for="">Неделя</label>
                                             </div>
                                             <div class="row">
                                                 <input class="settings" type="radio" name="countDayHistoryGraph">
-                                                <label for=""> Месяц</label>
+                                                <label for="">Месяц</label>
                                             </div>
                                         </div>
                                     </div>
@@ -139,45 +122,51 @@
                                     </div>
                                     <div class="row" style="flex-wrap: wrap;">
                                         <label for="algoritm">Алгоритм</label>
-
                                         <select class="settings" size="1" id="algoritm">
-                                        <option value="HG">High garant</option>
-                                        <option value="HSG">High safe garant</option>
-                                        <option value="AVG">Avg garant</option>
-                                        <option value="LG">Low garant</option>
-                                        <option value="BG">Buy garant</option>
-                                    </select>
+                                            <option value="HG">High garant</option>
+                                            <option value="HSG">High safe garant</option>
+                                            <option value="AVG">Avg garant</option>
+                                            <option value="LG">Low garant</option>
+                                            <option value="BG">Buy garant</option>
+                                            <option value="OG">Order garant</option>
+                                        </select>
                                     </div>
+
+                                    <div class="row num">
+                                        <label for="">Процент от заказа</label>
+                                        <div class="min-row" style="justify-content: flex-end;">
+                                            <input class="settings" type="number" id="orderPercent" name = "orderPercent">
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                                 <div class="sett-coll">
                                     <div class="sett-col">
                                         <div class="row num">
-                                            <label for="ordersPlace"> Коэф стакана </label>
+                                            <label for="ordersPlace">Коэф стакана </label>
                                             <input class="settings" type="number" name="ordersPlace" id="ordersPlace">
                                         </div>
                                         <div class="row num">
-                                            <label for=""> Продаж в день за месяц </label>
+                                            <label for="">Продаж в день за месяц </label>
                                             <input class="settings" type="number" name="cntSalesMonth">
                                         </div>
                                         <div class="row num">
-                                            <label for="listingPlace"> Место в листинге</label>
+                                            <label for="listingPlace">Место в листинге</label>
                                             <input class="settings" type="number" name="listingPlace" id="listingPlace">
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="sett-coll">
                                     <div class="row num">
-                                        <label for="removeFromSaleDays"> Снимать с продажи через дней:</label>
+                                        <label for="removeFromSaleDays">Снимать с продажи через дней:</label>
                                         <input class="settings" type="number" name="removeFromSaleDays" id="removeFromSaleDays">
                                     </div>
                                 </div>
                                 <div class="sett-coll">
                                     <div class="row">
                                         <div class="min-row">
-                                            <label for="appidForAnalysis"> Игра: </label>
+                                            <label for="appidForAnalysis">Игра: </label>
                                             <input type="string" size=4 id="appidForAnalysis">
-
                                         </div>
                                         <div class="min-row">
                                             <label for="fileForAnalysis">Файл:</label>
@@ -188,14 +177,11 @@
                                 </div>
                             </div>
                             <div class="logs">
-
                                 <button id="clearLogs">Очистить логи</button>
-
                                 <div id="log" class="overflow"></div>
                             </div>
-
                         </div>
-                           <div class="close-setting-btn">Скрыть настройки</div>
+                        <div class="close-setting-btn">Скрыть настройки</div>
                     </div>
                 </div>
             </section>
@@ -208,15 +194,15 @@
                                 <button id="deleteOrders">Удалить отмеченные ордера</button>
                                 <div class="btn-group">
                                     Вкл/откл отмеченные ордера
+                                    
                                     <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
                                         <button id="on_work_off">Выкл</button>
                                     </div>
                                 </div>
                                 <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
-                                <label id = "updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
+                                <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
-                                
                                 <button class="addGroup" id="addGroup">Создать группу</button>
                                 <button id="checkItems">Выделить между отмеченных</button>
                             </td>
@@ -229,25 +215,24 @@
                     </table>
                 </div>
     </div>
-    </section>
-    </section>
-    <form id="theme-set">
-        <div class="theme-btn">Тема</div>
-
+</section></section>
+<form id="theme-set">
+    <div class="theme-btn">Тема</div>
+    <div>
         <div>
-            <div>
-                <input type="radio" id="themeChoice1" name="theme" value="Classic">
-                <label for="themeChoice1">Classic</label>
-            </div>
-
-            <div>
-                <input type="radio" id="themeChoice3" name="theme" value="Steam">
-                <label for="themeChoice3">Dark</label>
-            </div>
-            <div>
-                <div id="themeSetup" type="submit" style="display: none;">Изменить</div>
-            </div>
+            <input type="radio" id="themeChoice1" name="theme" value="Classic">
+            <label for="themeChoice1">Classic</label>
         </div>
-    </form>
-    <div id="to_top"><i class="fa fa-angle-double-up"></i></div>
+        <div>
+            <input type="radio" id="themeChoice3" name="theme" value="Steam">
+            <label for="themeChoice3">Dark</label>
+        </div>
+        <div>
+            <div id="themeSetup" type="submit" style="display: none;">Изменить</div>
+        </div>
+    </div>
+</form>
+<div id="to_top">
+    <i class="fa fa-angle-double-up"></i>
+</div>
 </body>
