@@ -619,7 +619,7 @@ input[type=number] {
     margin-bottom: 20px;
     font-size: 15px;
     box-shadow: 5px 4px 15px rgba(0, 0, 0, 0.1);
-    max-height: 600px;
+    max-height: 580px;
     overflow-y: hidden;
 }
 
