@@ -1146,3 +1146,8 @@ body.steam .table-setting>button:hover,body.steam  .table-setting .btn-row>butto
 div.err_msg{
     font-weight: bold;
 }
+
+.group_b_cnt_percent {
+    display: inline-block !important;
+    margin-right: 10px !important;
+}
