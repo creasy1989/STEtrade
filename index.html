@@ -7,10 +7,6 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
-    <script type="text/javascript" src="background.js"></script>
-    <script type="text/javascript" src="steam.js"></script>
-    <script type="text/javascript" src="local.js"></script>
-    <script type="text/javascript" src="local_analyzer.js"></script>
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
@@ -72,7 +68,7 @@
                                     <input class="settings" type="checkbox" name="autoIncOrders" checked id="autoIncOrders">
                                 </div>
                                 <div class="row check">
-                                    <label for="ignoreMissing">Игнор отсутсвующих </label>
+                                    <label for="ignoreMissing">Игнор отсутствующих </label>
                                     <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
                                 </div>
                                 <div class="cs coll">
@@ -160,6 +156,18 @@
                                             <label for="listingPlace">Место в листинге</label>
                                             <input class="settings" type="number" name="listingPlace" id="listingPlace">
                                         </div>
+                                        <div class="row num">
+                                            <label for="monthTrend">Тренд месячный</label>
+                                            <input class="settings" type="number" name="monthTrend" id="monthTrend">
+                                        </div>
+                                        <div class="row num">
+                                            <label for="weekTrend">Тренд недельный</label>
+                                            <input class="settings" type="number" name="weekTrend" id ="weekTrend">
+                                        </div>
+                                        <div class="row num">
+                                            <label for="dayTrend">Тренд дневной</label>
+                                            <input class="settings" type="number" name="dayTrend" id="dayTrend">
+                                        </div>                                        
                                     </div>
                                 </div>
                                 <div class="sett-coll">
@@ -175,7 +183,7 @@
                                             <input type="string" size=4 id="appidForAnalysis">
                                         </div>
                                         <div class="min-row">
-                                            <label for="fileForAnalysis">Файл:</label>
+                                            <label for="fileForAnalysis">Файл: </label>
                                             <input type="string" size=4 id="fileForAnalysis">
                                         </div>
                                     </div>
@@ -198,17 +206,15 @@
                             <td colspan="2" valign="top" class="table-setting">
                                 <button id="deleteItems">Удалить отмеченные из базы</button>
                                 <button id="deleteOrders">Удалить отмеченные ордера</button>
-                                <div class="btn-group">
-                                    Вкл/откл отмеченные ордера
-                                    
-                                    <div class="btn-row">
+                                <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
+                                <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
+                                <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
+                                <div class="btn-group">Вкл/откл отмеченные ордера
+                                <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
                                         <button id="on_work_off">Выкл</button>
                                     </div>
                                 </div>
-                                <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
-                                <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
-                                <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
                                 <button class="addGroup" id="addGroup">Создать группу</button>
                                 <button id="checkItems">Выделить между отмеченных</button>
                             </td>
