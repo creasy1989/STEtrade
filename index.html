@@ -7,6 +7,10 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="scr\jquery.js"></script>
     <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="background.js"></script>
+    <script type="text/javascript" src="steam.js"></script>
+    <script type="text/javascript" src="local.js"></script>
+    <script type="text/javascript" src="local_analyzer.js"></script>
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
@@ -177,6 +181,12 @@
                                     </div>
                                 </div>
                                 <div class="sett-coll">
+                                    <div class="row num">
+                                        <label for="CheckActualPrices">Анализировать "активные" предметы (раз в час)</label>
+                                        <input class="settings" type="checkbox" unchecked name="checkActualPrices" id="checkActualPrices">
+                                    </div>
+                                </div>                                
+                                <div class="sett-coll">
                                     <div class="row">
                                         <div class="min-row">
                                             <label for="appidForAnalysis">Игра: </label>
@@ -188,6 +198,7 @@
                                         </div>
                                     </div>
                                     <button id="analyseFile">Начать анализ</button>
+                                    <button id="openReports">Открыть отчеты</button>
                                 </div>
                             </div>
                             <div class="logs">

@@ -628,6 +628,7 @@ input[type=number] {
 }
 
 #analyseFile,
+#openReports,
 #clearLogs {
     border: none;
     max-width: 200px;
