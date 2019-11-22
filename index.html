@@ -26,9 +26,9 @@
             <section id="trade-sett">
                 <div class="inner">
                     <div id="settings">
+                        <button id="startWork">Начать работу</button>
                         <div class="settings-block">
                             <div class="main-settings sett-coll">
-                                <button id="startWork">Начать работу</button>
                                 <div class="row check" id="AOSettings">
                                     <label for="AOSettings">ПРО версия</label>
                                     <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
@@ -91,6 +91,7 @@
                                 <br>
                                 <label id="balance"></label>
                                 <label id="on_sale_sum"></label>
+                                <label id="orders_sum"></label>
                             </div>
                             <div id="settingsAnalyzer" class="sett-coll">
                                 <div class="sett-coll">
@@ -133,16 +134,12 @@
                                             <option value="OG">Order garant</option>
                                         </select>
                                     </div>
-
                                     <div class="row num">
                                         <label for="">Процент от заказа</label>
                                         <div class="min-row" style="justify-content: flex-end;">
-                                            <input class="settings" type="number" id="orderPercent" name = "orderPercent">
+                                            <input class="settings" type="number" id="orderPercent" name="orderPercent">
                                         </div>
                                     </div>
-                                    
-                                </div>
-                                <div class="sett-coll">
                                     <div class="sett-col">
                                         <div class="row num">
                                             <label for="ordersPlace">Коэф стакана </label>
@@ -162,12 +159,12 @@
                                         </div>
                                         <div class="row num">
                                             <label for="weekTrend">Тренд недельный</label>
-                                            <input class="settings" type="number" name="weekTrend" id ="weekTrend">
+                                            <input class="settings" type="number" name="weekTrend" id="weekTrend">
                                         </div>
                                         <div class="row num">
                                             <label for="dayTrend">Тренд дневной</label>
                                             <input class="settings" type="number" name="dayTrend" id="dayTrend">
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="sett-coll">
@@ -181,7 +178,7 @@
                                         <label for="CheckActualPrices">Анализировать "активные" предметы (раз в час)</label>
                                         <input class="settings" type="checkbox" unchecked name="checkActualPrices" id="checkActualPrices">
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="sett-coll">
                                     <div class="row">
                                         <div class="min-row">
@@ -197,12 +194,13 @@
                                     <button id="openReports">Открыть отчеты</button>
                                 </div>
                             </div>
-                            <div class="logs">
-                                <button id="clearLogs">Очистить логи</button>
-                                <div id="log" class="overflow"></div>
-                            </div>
+                        </div>
+                        <div class="logs">
+                            <button id="clearLogs">Очистить логи</button>
+                            <div id="log" class="overflow"></div>
                         </div>
                         <div class="close-setting-btn">Скрыть настройки</div>
+                        <div class="close-log-btn">Скрыть логи</div>
                     </div>
                 </div>
             </section>
@@ -216,8 +214,13 @@
                                 <button id="updateItemsPrices">Сделать перерасчет цен выделенных</button>
                                 <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
-                                <div class="btn-group">Вкл/откл отмеченные ордера
-                                <div class="btn-row">
+                                <div class="btn-group">
+                                    Вкл/откл отмеченные ордера
+                                    
+                                    
+                                    
+                                    
+                                    <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
                                         <button id="on_work_off">Выкл</button>
                                     </div>
@@ -253,5 +256,83 @@
 </form>
 <div id="to_top">
     <i class="fa fa-angle-double-up"></i>
+</div>
+<div class="groupSettings" id="groupSettings">
+    <div class="b-popup-content">
+        <div class="sett-coll">
+            <div class="row num">
+                <label for="">Желаемый процент профита</label>
+                <div class="min-row" style="justify-content: flex-end;">
+                    <input class="settings" type="number" id="group_profitPercent">
+                    <input class="settings" type="number" id="group_minProfit">
+                </div>
+            </div>
+            <div class="row num">
+                <label for="">Минимум продаж в час </label>
+                <input class="settings" type="number" id="group_countSalesHour">
+            </div>
+            <div class="row">
+                <label for="">Период анализа</label>
+                <div class="mon-row">
+                    <div class="row">
+                        <input class="settings" type="radio" checked id="group_countDayHistoryGraph">
+                        <label for="">Неделя</label>
+                    </div>
+                    <div class="row">
+                        <input class="settings" type="radio" id="group_countDayHistoryGraph">
+                        <label for="">Месяц</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row num">
+                <label for="">Процент коридора </label>
+                <input class="settings" type="number" id="group_percentLimit">
+            </div>
+            <div class="row" style="flex-wrap: wrap;">
+                <label for="algoritm">Алгоритм</label>
+                <select class="settings" size="1" id="group_algoritm">
+                    <option value="HG">High garant</option>
+                    <option value="HSG">High safe garant</option>
+                    <option value="AVG">Avg garant</option>
+                    <option value="LG">Low garant</option>
+                    <option value="BG">Buy garant</option>
+                    <option value="OG">Order garant</option>
+                </select>
+            </div>
+            <div class="row num">
+                <label for="">Процент от заказа</label>
+                <div class="min-row" style="justify-content: flex-end;">
+                    <input class="settings" type="number" id="group_orderPercent">
+                </div>
+            </div>
+            <div class="sett-col">
+                <div class="row num">
+                    <label for="ordersPlace">Коэф стакана </label>
+                    <input class="settings" type="number" id="group_ordersPlace">
+                </div>
+                <div class="row num">
+                    <label for="">Продаж в день за месяц </label>
+                    <input class="settings" type="number" id="group_cntSalesMonth">
+                </div>
+                <div class="row num">
+                    <label for="listingPlace">Место в листинге</label>
+                    <input class="settings" type="number" id="group_listingPlace">
+                </div>
+                <div class="row num">
+                    <label for="monthTrend">Тренд месячный</label>
+                    <input class="settings" type="number" id="group_monthTrend">
+                </div>
+                <div class="row num">
+                    <label for="weekTrend">Тренд недельный</label>
+                    <input class="settings" type="number" id="group_weekTrend">
+                </div>
+                <div class="row num">
+                    <label for="dayTrend">Тренд дневной</label>
+                    <input class="settings" type="number" id="group_dayTrend">
+                </div>
+            </div>
+            <button id="closeGroupSettings" class="closeGroupSettings">Закрыть</button>
+        </div>
+    </div>
 </div>
 </body>

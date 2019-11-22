@@ -381,12 +381,14 @@ table tr {
 .tr-color {
     background-color: #85b3f3 !important;
 }
-#log{
-	height: 100%;
+
+#log {
+    height: 100%;
 }
+
 .overflow {
     overflow: auto;
-       vertical-align: text-top;
+    vertical-align: text-top;
 }
 
 a:link {
@@ -495,25 +497,36 @@ input[type=number] {
 
 #trade-sett {
     background-color: #d9d9d9;
-        box-shadow: 2px 5px 18px rgba(122, 122, 122, 0.15);
+    box-shadow: 2px 5px 18px rgba(122, 122, 122, 0.15);
 }
-#settings{
+
+#settings {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .settings-block {
     display: flex;
     padding: 20px;
     position: relative;
     transition: .3s all;
+    flex-wrap: wrap;
+    width: 100%;
+    ;
+    justify-content: space-between;
     /* justify-content: space-between; */
 }
-.settings-block.hide-setting{
-        height: 0;
+
+.settings-block.hide-setting,
+.logs.hide-setting {
+    height: 0;
     overflow: hidden;
     opacity: 0;
 }
-.close-setting-btn{
-   display: flex;
+
+.close-setting-btn {
+    display: flex;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -529,12 +542,33 @@ input[type=number] {
     cursor: pointer;
     opacity: 0.7;
 }
-.close-setting-btn:hover{
-    background-color: #817bc9 !important;
-}
-.close-setting-btn{
+
+.close-log-btn {
+    left: inherit;
+    right: 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -33px;
+    font-weight: 600;
+    background-color: #815bb4;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    color: #fff;
+    cursor: pointer;
     opacity: 1;
 }
+
+.close-setting-btn:hover {
+    background-color: #817bc9 !important;
+}
+
+.close-setting-btn {
+    opacity: 1;
+}
+
 .settings-block>div {
     margin-right: 1.5%;
 }
@@ -548,18 +582,37 @@ input[type=number] {
     border-radius: 5px;
     margin-bottom: 20px;
     justify-content: center;
+    width: 30%;
+}
+
+.sett-coll.analise {
+    justify-content: flex-start;
+}
+
+.sett-coll.analise .sett-coll {
+    width: 100%;
 }
 
 .main-settings {
     justify-content: flex-start;
 }
-.time-mark{
-	margin-left: 5px;
+
+.time-mark {
+    margin-left: 5px;
 }
-#settingsAnalyzer.sett-coll {
+
+#settingsAnalyzer {
+    width: 66%;
     flex-direction: column;
+    height: 500PX;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+#settingsAnalyzer.sett-coll {
+    flex-wrap: wrap;
+    margin-right: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 #settingsAnalyzer.sett-coll h3 {
@@ -567,9 +620,11 @@ input[type=number] {
 }
 
 #settingsAnalyzer.sett-coll>.sett-coll {
-    width: 100%;
+    width: 47%;
     margin: 0;
     margin-bottom: 3%;
+    min-width: 302px;
+    height: fit-content;
 }
 
 .row {
@@ -603,13 +658,13 @@ input[type=number] {
     align-items: center;
 }
 
-.settings-block .logs {
+.logs {
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
-    width: 50%;
+    width: 100%;
     transition: .3s all;
     background: #f6f6f6;
     color: #000;
@@ -643,9 +698,12 @@ input[type=number] {
     text-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
     cursor: pointer;
 }
-#analyseFile:hover,#clearLogs:hover{
+
+#analyseFile:hover,
+#clearLogs:hover {
     background: #817bc9 !important;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -691,11 +749,14 @@ input::-webkit-inner-spin-button {
     -webkit-box-orient: vertical;
 }
 
-.settings-block #startWork {
-    width: 95%;
-    margin: 0 auto;
+#startWork {
+    width: 150px;
+    margin: 0;
     border: none;
+    border-right: 80%;
     margin-bottom: 10px;
+    margin-top: 30px;
+    margin-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -730,7 +791,6 @@ button#startWork:focus {
     outline-color: transparent;
 }
 
-
 #to_top {
     color: #979797;
     cursor: pointer;
@@ -745,12 +805,15 @@ button#startWork:focus {
     display: none;
     transition: opacity 0.3s ease;
     z-index: 20;
-        margin-left: auto;
+    margin-left: auto;
     width: fit-content;
 }
-#to_top:hover{
-    color: rgb(129, 91, 180);;
+
+#to_top:hover {
+    color: rgb(129, 91, 180);
+    ;
 }
+
 
 /*END БЛОК настроек */
 
@@ -804,53 +867,73 @@ td.color_order {
     color: #815bb4;
     font-weight: 600;
 }
-.color_onsale,.color_order{
-	    
+
+.color_onsale,
+.color_order {
     justify-content: space-between;
     padding: 0 5px;
     align-items: center;
 }
-.tableOnSale,.tableOrder{
-	margin-left:5px;
-	color: transparent;
-	position: relative;
-	display: inline-flex;
-	justify-content: center;;
-	align-items: center;
-	border: none;
+
+.tableOnSale,
+.tableOrder {
+    margin-left: 5px;
+    color: transparent;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    ;
+    align-items: center;
+    border: none;
     border-radius: 5px;
     background: #d1dbe7;
     opacity: 0.6;
 }
-.tableOnSale:before,.tableOnSale:after,.tableOrder:before,.tableOrder:after{
-	position: absolute;
+
+.tableOnSale:before,
+.tableOnSale:after,
+.tableOrder:before,
+.tableOrder:after {
+    position: absolute;
     content: ' ';
     height: 11px;
     width: 1.5px;
     background-color: #333;
-    transition:.3s all;
+    transition: .3s all;
 }
-.tableOnSale:hover,.tableOrder:hover{
-	opacity: 1
+
+.tableOnSale:hover,
+.tableOrder:hover {
+    opacity: 1
 }
-.tableOnSale:hover:before,.tableOrder:hover:before{
-	transform: rotate(225deg);
+
+.tableOnSale:hover:before,
+.tableOrder:hover:before {
+    transform: rotate(225deg);
 }
-.tableOnSale:hover:after,.tableOrder:hover:after{
-	transform: rotate(135deg);
+
+.tableOnSale:hover:after,
+.tableOrder:hover:after {
+    transform: rotate(135deg);
 }
-.tableOnSale:before,.tableOrder:before {
-transform: rotate(45deg);
+
+.tableOnSale:before,
+.tableOrder:before {
+    transform: rotate(45deg);
 }
-.tableOnSale:after,.tableOrder:after  {
-transform: rotate(-45deg);
+
+.tableOnSale:after,
+.tableOrder:after {
+    transform: rotate(-45deg);
 }
+
 .table-setting>button,
 .btn-row>button,
 .hideOpen,
 button.group,
+button.closeGroupSettings,
+button.group_settings,
 button.addToGroup {
-    display: flex;
     justify-content: center;
     align-items: center;
     border: none;
@@ -983,17 +1066,18 @@ table input[type=checkbox] {
     border-radius: 4px 4px 0 0;
 }
 
-div.order_msg{
+div.order_msg {
     background-color: #99cde4;
 }
 
-div.sell_msg{
+div.sell_msg {
     background-color: #8deb8d;
 }
 
-div.filter_msg{
+div.filter_msg {
     background-color: #e49797;
 }
+
 
 /* END НАСТРОЙКА темы */
 
@@ -1002,7 +1086,7 @@ div.filter_msg{
 
 body.steam,
 body.steam #trade-sett {
-    background:  #1b2838;
+    background: #1b2838;
 }
 
 body.steam header {
@@ -1011,7 +1095,7 @@ body.steam header {
 }
 
 body.steam .sett-coll,
-body.steam .settings-block .logs {
+body.steam .logs {
     background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
 }
@@ -1063,9 +1147,11 @@ body.steam .tab tr {
 body.steam .tab tr:nth-child(odd) {
     background-color: rgba(7, 8, 10, 0.12)
 }
+
 body.steam .tab tr:nth-child(odd):hover {
     background-color: rgba(0, 0, 0, 0.12);
 }
+
 body.steam .tab tr:nth-child(odd):hover {
     background-color: rgba(0, 0, 0, 0.2);
 }
@@ -1095,23 +1181,31 @@ body.steam td.color_order {
     background: #2373b1;
 }
 
-body.steam div.order_msg{
+body.steam div.order_msg {
     background-color: #2373b1;
 }
 
-body.steam div.sell_msg{
+body.steam div.sell_msg {
     background-color: #209720;
 }
 
-body.steam div.filter_msg{
+body.steam div.filter_msg {
     background-color: #ec5353;
 }
-body.steam .close-setting-btn{
-  background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
+
+body.steam .close-setting-btn {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
 }
-body.steam .table-setting>button:hover,body.steam  .table-setting .btn-row>button:hover,body.steam .close-setting-btn:hover,body.steam #analyseFile:hover, body.steam #clearLogs:hover{
+
+body.steam .table-setting>button:hover,
+body.steam .table-setting .btn-row>button:hover,
+body.steam .close-setting-btn:hover,
+body.steam #analyseFile:hover,
+body.steam #clearLogs:hover {
     background: #1d2024 !important;
 }
+
+
 /* END ТЕмная тема */
 
 
@@ -1126,29 +1220,57 @@ body.steam .table-setting>button:hover,body.steam  .table-setting .btn-row>butto
     #settingsAnalyzer {
         width: 46%;
     }
-    .settings-block .logs {
+    .logs {
+        width: 100%;
+    }
+    #settingsAnalyzer.sett-coll>.sett-coll {
         width: 100%;
     }
 }
+
 @media screen and ( max-width: 1390px) {
-  .main-settings .min-row{
-   	    justify-content: flex-end;
+    .main-settings .min-row {
+        justify-content: flex-end;
         width: min-content;
-   }
-   .time-mark{
-   	margin: 0 auto;
-   	margin-top: 5px;
-   }
+    }
+    .time-mark {
+        margin: 0 auto;
+        margin-top: 5px;
+    }
 }
 
 
 /* End Медиазапросы */
 
-div.err_msg{
+div.err_msg {
     font-weight: bold;
 }
 
 .group_b_cnt_percent {
     display: inline-block !important;
     margin-right: 10px !important;
+}
+
+.groupSettings {
+    width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+}
+
+.b-popup-content {
+    position: absolute;
+    margin: 40px auto 0px auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #000;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

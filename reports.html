@@ -10,16 +10,31 @@
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
+
 <body>
-    <input class="overflow" size="100" type="text" id="sqlQuery">
-    <br>
-    <button id="runSqlQuery">выполнить запрос</button>
-    <br>
-    <input type="date" id="dateReport">
-    <button id="loadHistoryToSQL">Загрузить данные</button>
-    <button id="clearHistorySQL">Удалить историю</button>
-    <br>
-    <button id="reportProfitMonth">Профит по дням</button>
-    <button id="reportHistory">Подробный отчет</button>
-    <div id="report"></div>
+    <div id="wrapper">
+        <header>
+            <div class="inner">
+                <a class="logo">STEtrade</a>
+                <ul class="socials">
+                    <li class="vk">
+                        <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section id="content">
+            <input class="overflow" size="100" type="text" id="sqlQuery">
+            <br>
+            <button id="runSqlQuery">выполнить запрос</button>
+            <br>
+            <input type="date" id="dateReport">
+            <button id="loadHistoryToSQL">Загрузить данные</button>
+            <button id="clearHistorySQL">Удалить историю</button>
+            <br>
+            <button id="reportProfitMonth">Профит по дням</button>
+            <button id="reportHistory">Подробный отчет</button>
+            <div id="report"></div>
+        </section>
+    </div>
 </body>
