@@ -108,16 +108,7 @@
                                     </div>
                                     <div class="row">
                                         <label for="">Период анализа</label>
-                                        <div class="mon-row">
-                                            <div class="row">
-                                                <input class="settings" type="radio" checked name="countDayHistoryGraph">
-                                                <label for="">Неделя</label>
-                                            </div>
-                                            <div class="row">
-                                                <input class="settings" type="radio" name="countDayHistoryGraph">
-                                                <label for="">Месяц</label>
-                                            </div>
-                                        </div>
+                                        <input class="settings" type="number" name="countDayHistoryGraph" id="countDayHistoryGraph">
                                     </div>
                                     <div class="row num">
                                         <label for="">Процент коридора </label>
@@ -220,6 +211,8 @@
                                     
                                     
                                     
+                                    
+                                    
                                     <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
                                         <button id="on_work_off">Выкл</button>
@@ -257,6 +250,7 @@
 <div id="to_top">
     <i class="fa fa-angle-double-up"></i>
 </div>
+<div class="groupSettings" id="groupSettings">
     <div class="b-popup-content">
         <div class="sett-coll">
             <div class="row num">
@@ -272,16 +266,7 @@
             </div>
             <div class="row">
                 <label for="">Период анализа</label>
-                <div class="mon-row">
-                    <div class="row">
-                        <input class="settings" type="radio" checked id="group_countDayHistoryGraph">
-                        <label for="">Неделя</label>
-                    </div>
-                    <div class="row">
-                        <input class="settings" type="radio" id="group_countDayHistoryGraph">
-                        <label for="">Месяц</label>
-                    </div>
-                </div>
+                <input class="settings" type="number" name = "countDayHistoryGraph" id="countDayHistoryGraph">
             </div>
             <div class="row num">
                 <label for="">Процент коридора </label>
