@@ -569,6 +569,14 @@ input[type=number] {
     opacity: 1;
 }
 
+.close-log-btn:hover {
+    background-color: #817bc9 !important;
+}
+
+.close-log-btn {
+    opacity: 1;
+}
+
 .settings-block>div {
     margin-right: 1.5%;
 }
@@ -700,6 +708,7 @@ input[type=number] {
 }
 
 #analyseFile:hover,
+#openReports:hover,
 #clearLogs:hover {
     background: #817bc9 !important;
 }
@@ -1116,6 +1125,7 @@ body.steam .hideOpen,
 body.steam button.group,
 body.steam button.addToGroup,
 body.steam #analyseFile,
+body.steam #openReports,
 body.steam #clearLogs {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
     color: #fff;
@@ -1197,9 +1207,14 @@ body.steam .close-setting-btn {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
 }
 
+body.steam .close-log-btn {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
+}
+
 body.steam .table-setting>button:hover,
 body.steam .table-setting .btn-row>button:hover,
 body.steam .close-setting-btn:hover,
+body.steam .close-log-btn:hover,
 body.steam #analyseFile:hover,
 body.steam #clearLogs:hover {
     background: #1d2024 !important;
