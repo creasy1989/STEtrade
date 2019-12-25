@@ -85,9 +85,12 @@
                                         <label for="sticker_overprice">Минимальная наценка на стикеры</label>
                                         <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                     </div>
+                                    <h4>Telegram </h4>
+                                    <div class="row num">
+                                        <label for="telegram_chat_id">Идентификтор чата (телеграм)</label>
+                                        <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
+                                    </div>
                                 </div>
-                                <input hidden="true" type="date" id="profitDate">
-                                <button hidden="true" id="profit">Профит</button>
                                 <br>
                                 <label id="balance"></label>
                                 <label id="on_sale_sum"></label>
@@ -131,6 +134,8 @@
                                             <input class="settings" type="number" id="orderPercent" name="orderPercent">
                                         </div>
                                     </div>
+                                </div>
+                                <div class="sett-coll">
                                     <div class="sett-col">
                                         <div class="row num">
                                             <label for="ordersPlace">Коэф стакана </label>
@@ -182,6 +187,8 @@
                                         </div>
                                     </div>
                                     <button id="analyseFile">Начать анализ</button>
+                                </div>
+                                <div class="sett-coll">
                                     <button id="openReports">Открыть отчеты</button>
                                 </div>
                             </div>
@@ -207,11 +214,6 @@
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
                                 <div class="btn-group">
                                     Вкл/откл отмеченные ордера
-                                    
-                                    
-                                    
-                                    
-                                    
                                     
                                     <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
@@ -266,7 +268,7 @@
             </div>
             <div class="row">
                 <label for="">Период анализа</label>
-                <input class="settings" type="number" name = "countDayHistoryGraph" id="countDayHistoryGraph">
+                <input class="settings" type="number" name="countDayHistoryGraph" id="countDayHistoryGraph">
             </div>
             <div class="row num">
                 <label for="">Процент коридора </label>
