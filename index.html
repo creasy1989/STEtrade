@@ -63,6 +63,13 @@
                                         <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
                                     </div>
                                 </div>
+                                <div class="row num">
+                                    <label for="itemsOnSaleRefreshTime">Задержка между запросами (мс)</label>
+                                    <div class="min-row">
+                                        <input class="settings" type="number" name="query_delay" id="query_delay">
+                                        <label id="query_delay"></label>
+                                    </div>
+                                </div>
                                 <div class="row check">
                                     <label for="autoIncOrders">Автоинкремент заказа</label>
                                     <input class="settings" type="checkbox" name="autoIncOrders" checked id="autoIncOrders">
@@ -87,7 +94,7 @@
                                     </div>
                                     <h4>Telegram </h4>
                                     <div class="row num">
-                                        <label for="telegram_chat_id">Идентификтор чата (телеграм)</label>
+                                        <label for="telegram_chat_id">Идентификтор чата</label>
                                         <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
                                     </div>
                                 </div>
@@ -214,6 +221,7 @@
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
                                 <div class="btn-group">
                                     Вкл/откл отмеченные ордера
+                                    
                                     
                                     <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
