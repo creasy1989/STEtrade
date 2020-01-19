@@ -6,9 +6,9 @@
         ]
     },
     "manifest_version": 2,
-    "name": "STEtrade_v1.24",
+    "name": "STEtrade_v1.25",
     "description": "Автоматическая покупка/продажа предметов steam",
-    "version": "1.24",
+    "version": "1.25",
     "icons": {      
 	  "96": "ico/favicon-96x96.png",
 	  "128": "ico/favicon-128x128.png",

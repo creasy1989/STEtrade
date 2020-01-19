@@ -51,6 +51,9 @@ textarea {
     font-family: sans-serif
 }
 
+H4{
+    margin: auto 5px;
+}
 abbr[title] {
     border-bottom: 1px dotted
 }
@@ -260,7 +263,7 @@ section {
 }
 
 .inner>table {
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .inner {
@@ -384,6 +387,7 @@ table tr {
 
 #log {
     height: 100%;
+    position: relative;
 }
 
 .overflow {
@@ -508,18 +512,18 @@ input[type=number] {
 
 .settings-block {
     display: flex;
-    padding: 20px;
+    padding-top: 20px;
     position: relative;
     transition: .3s all;
     flex-wrap: wrap;
     width: 100%;
-    ;
+    box-sizing: border-box;
     justify-content: space-between;
     /* justify-content: space-between; */
 }
 
 .settings-block.hide-setting,
-.logs.hide-setting {
+.logs-block.hide-setting {
     height: 0;
     overflow: hidden;
     opacity: 0;
@@ -612,7 +616,7 @@ input[type=number] {
 #settingsAnalyzer {
     width: 69%;
     flex-direction: column;
-    height: 500PX;
+    height: 470;
     flex-wrap: wrap;
 }
 
@@ -640,7 +644,7 @@ input[type=number] {
     flex-direction: row;
     align-items: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     justify-content: space-between;
 }
 
@@ -665,7 +669,10 @@ input[type=number] {
 .min-row.check {
     align-items: center;
 }
-
+.logs-block{
+    width: 100%;
+    position: relative;
+}
 .logs {
     padding: 20px;
     display: flex;
@@ -677,6 +684,7 @@ input[type=number] {
     background: #f6f6f6;
     color: #000;
     min-width: 500px;
+    position: relative;
     margin: 0;
     margin-left: auto;
     margin-bottom: 20px;
@@ -707,6 +715,13 @@ input[type=number] {
     cursor: pointer;
 }
 
+#clearLogs{
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    transform: rotate(-90deg) translateY(-120%);
+    width: 70px;
+}
 #analyseFile:hover,
 #openReports:hover,
 #clearLogs:hover {
@@ -759,13 +774,13 @@ input::-webkit-inner-spin-button {
 }
 
 #startWork {
-    width: 150px;
+    /* width: 150px; */
+    position: absolute;
+    /* transform: rotate(-90deg); */
+    left: -50px;
+    top: 25px;
     margin: 0;
     border: none;
-    border-right: 80%;
-    margin-bottom: 10px;
-    margin-top: 30px;
-    margin-left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -873,6 +888,7 @@ td.color_order {
 .table-setting>button,
 .table-setting>.btn-group {
     margin-right: 10px;
+    margin-bottom: 15px;
     color: #815bb4;
     font-weight: 600;
 }
@@ -1024,7 +1040,30 @@ table input[type=checkbox] {
     transform: rotate(180deg);
 }
 
-
+#trade-table .inner >table>tbody{
+	position: relative;
+	width: 100%;
+	display: flex;
+}
+#trade-table .inner >table>tbody>tr:first-child{
+	position: sticky;
+	width: 8%;
+	height: fit-content;
+	overflow: hidden;
+	top: 0;
+	/* top: 0; */
+}
+#trade-table .inner >table>tbody>tr:last-child{
+	width: 92%;
+	display: flex;
+}
+#dataTable,#tableID,#trade-table .inner >table>tbody>tr:last-child>td{
+	width: 100%;
+}
+#trade-table .inner >table>tbody>tr:first-child>td{
+	display:flex;
+	flex-direction: column;
+}
 /* END БЛОК ТАБЛИЦЫ */
 
 
@@ -1036,7 +1075,7 @@ table input[type=checkbox] {
     flex-direction: column;
     padding: 10px 15px;
     background: #5b5c61;
-    top: 95px;
+    top: 90px;
     justify-content: center;
     align-items: center;
     color: #fff;
@@ -1221,6 +1260,21 @@ body.steam #clearLogs:hover {
 }
 
 
+.b-popup-settings{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-radius:5px;
+    background-color:#dadada;
+    padding:30px;
+    
+
+}
+.b-popup-settings .sett-coll{
+    width:100%;
+}
+
 /* END ТЕмная тема */
 
 
@@ -1231,15 +1285,15 @@ body.steam #clearLogs:hover {
         flex-wrap: wrap;
         justify-content: space-between
     }
-    .main-settings,
+   /* .main-settings,
     #settingsAnalyzer {
         width: 46%;
-    }
+    }*/
     .logs {
         width: 100%;
     }
     #settingsAnalyzer.sett-coll>.sett-coll {
-        width: 100%;
+        width: 49%;
     }
 }
 
