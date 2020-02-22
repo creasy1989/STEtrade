@@ -286,7 +286,7 @@ header .inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 5px 0;
     margin: 0 auto;
     min-width: inherit;
 }
@@ -343,6 +343,34 @@ header .inner {
     background-image: url(/ico/youtube.svg);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.user_avatar {
+    width: 40px;
+    height: 40px;
+    content: '';
+    background-size: cover;
+    margin-right: 15px;
+}
+
+.user_block {
+    display: flex;
+    align-items: center;
+    width: 88%;
+    justify-content: flex-end;
+}
+
+.user_block_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_block_text>div {
+    color: #fff;
+}
+
+.user_name {
+    font-weight: bold;
 }
 
 
@@ -616,7 +644,7 @@ input[type=number] {
 #settingsAnalyzer {
     width: 69%;
     flex-direction: column;
-    height: 470;
+    height: 450;
     flex-wrap: wrap;
 }
 
@@ -700,6 +728,7 @@ input[type=number] {
 
 #analyseFile,
 #openReports,
+#CheckActualPrices_btn,
 #clearLogs {
     border: none;
     max-width: 200px;
@@ -1075,7 +1104,7 @@ table input[type=checkbox] {
     flex-direction: column;
     padding: 10px 15px;
     background: #5b5c61;
-    top: 90px;
+    top: 5px;
     justify-content: center;
     align-items: center;
     color: #fff;
