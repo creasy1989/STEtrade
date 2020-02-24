@@ -644,7 +644,7 @@ input[type=number] {
 #settingsAnalyzer {
     width: 69%;
     flex-direction: column;
-    height: 450;
+    height: 460;
     flex-wrap: wrap;
 }
 
