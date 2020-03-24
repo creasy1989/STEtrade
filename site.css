@@ -394,7 +394,7 @@ table tr {
 }
 
 .tab tr:nth-child(odd):hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.51);
 }
 
 .tab tr:nth-child(even) {
@@ -402,7 +402,7 @@ table tr {
 }
 
 .tab tr:nth-child(even):hover {
-    background-color: rgba(206, 206, 206, 0.3);
+    background-color: rgba(26, 26, 26, 0.51);
 }
 
 .tab th {
@@ -594,7 +594,7 @@ input[type=number] {
 }
 
 .close-setting-btn:hover {
-    background-color: #817bc9 !important;
+    background-color: #817bc9bd !important;
 }
 
 .close-setting-btn {
@@ -602,7 +602,7 @@ input[type=number] {
 }
 
 .close-log-btn:hover {
-    background-color: #817bc9 !important;
+    background-color: #817bc9bd !important;
 }
 
 .close-log-btn {
@@ -753,8 +753,9 @@ input[type=number] {
 }
 #analyseFile:hover,
 #openReports:hover,
+#CheckActualPrices_btn:hover,
 #clearLogs:hover {
-    background: #817bc9 !important;
+    background: #817bc9bd !important;
 }
 
 input::-webkit-outer-spin-button,
@@ -1003,6 +1004,10 @@ button.addToGroup {
     font-size: 14px;
 }
 
+button.settings_not_null {
+    background: linear-gradient(rgb(8, 243, 38), rgb(70, 71, 76)) rgb(126, 126, 134);
+}
+
 .table-setting>button,
 .table-setting .btn-row>button {
     background: #815bb4;
@@ -1010,7 +1015,7 @@ button.addToGroup {
 
 .table-setting>button:hover,
 .table-setting .btn-row>button:hover {
-    background: #817bc9 !important;
+    background: #817bc9bd !important;
 }
 
 .table-setting>button:hover,
@@ -1193,6 +1198,7 @@ body.steam .hideOpen,
 body.steam button.group,
 body.steam button.addToGroup,
 body.steam #analyseFile,
+body.steam #CheckActualPrices_btn,
 body.steam #openReports,
 body.steam #clearLogs {
     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(49, 54, 58, 1), rgba(43, 46, 52, 1)) repeat scroll 0 0;
@@ -1231,7 +1237,7 @@ body.steam .tab tr:nth-child(odd):hover {
 }
 
 body.steam .tab tr:nth-child(odd):hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 body.steam .tab tr:nth-child(even) {
@@ -1239,7 +1245,7 @@ body.steam .tab tr:nth-child(even) {
 }
 
 body.steam .tab tr:nth-child(even):hover {
-    background-color: rgba(206, 206, 206, 0.3);
+    background-color: rgba(249, 247, 247, 0.5);
 }
 
 body.steam .tab th {
@@ -1284,6 +1290,8 @@ body.steam .table-setting .btn-row>button:hover,
 body.steam .close-setting-btn:hover,
 body.steam .close-log-btn:hover,
 body.steam #analyseFile:hover,
+body.steam #openReports:hover,
+body.steam #CheckActualPrices_btn:hover,
 body.steam #clearLogs:hover {
     background: #1d2024 !important;
 }

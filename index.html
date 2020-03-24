@@ -42,6 +42,18 @@
                                     <label for="AOSettings">ПРО версия</label>
                                     <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
                                 </div>
+                                <div class="row check">
+                                    <label for="soundNotifications">Звуковые уведомления</label>
+                                    <input class="settings" type="checkbox" name="soundNotifications" id="soundNotifications">
+                                </div>
+                                <div class="row">
+                                    <label for="logs_info">Логи</label>
+                                    <select class="settings" size="1" id="logs_info">
+                                        <option value="2">Все</option>
+                                        <option value="1">Только ошибки</option>
+                                        <option value="0">Выключить</option>
+                                    </select>
+                                </div>
                                 <div class="row">
                                     <label for="currency">Валюта </label>
                                     <select class="settings" size="1" id="currency">
@@ -90,7 +102,7 @@
                                 <div class="row check">
                                     <label for="dontSelTradable">Не продавать трейдабельные</label>
                                     <input class="settings" type="checkbox" name="dontSelTradable" id="dontSelTradable">
-                                </div>                                
+                                </div>
                                 <div class="cs coll">
                                     <h4>CS: GO </h4>
                                     <div class="row check">
@@ -101,8 +113,7 @@
                                         <label for="sticker_percent">Процент наценки</label>
                                         <input class="settings" type="number" name="sticker_percent" id="sticker_percent" style="margin-left:auto">
                                         <div class="min-row" style="justify-content: flex-end;">
-                                        
-                                        <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
+                                            <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                         </div>
                                     </div>
                                     <h4>Telegram </h4>
@@ -241,6 +252,7 @@
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
                                 <div class="btn-group">
                                     Вкл/откл ордера
+                                    
                                     
                                     <div class="btn-row">
                                         <button id="on_work_on">Вкл</button>
