@@ -28,12 +28,16 @@
             <br>
             <button id="runSqlQuery">выполнить запрос</button>
             <br>
-            <input class="settings" type="date" name = "dateReport" id="dateReport">
+            <input class="settings" type="date" name = "dateReportStart" id="dateReportStart">
+            <input class="settings" type="date" name = "dateReportEnd" id="dateReportEnd">
             <button id="loadHistoryToSQL">Загрузить данные</button>
             <button id="clearHistorySQL">Удалить историю</button>
             <br>
-            <button id="reportProfitMonth">Профит по дням</button>
-            <button id="reportHistory">Подробный отчет</button>
+            <button id="reportProfitMonth">Отчет старый</button>
+            <button id="reportProfitAvg">Отчет по средней цене</button>
+            <button id="reportProfitOptimist">Отчет оптимист</button>
+            <br>
+            <button id="reportHistory">Отчет детальный</button>
             <div id="report"></div>
         </section>
     </div>
