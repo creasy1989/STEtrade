@@ -6,9 +6,9 @@
         ]
     },
     "manifest_version": 2,
-    "name": "STEtrade_v1.27",
+    "name": "STEtrade_v1.28",
     "description": "Автоматическая покупка/продажа предметов steam",
-    "version": "1.27",
+    "version": "1.28",
     "icons": {      
 	  "96": "ico/favicon-96x96.png",
 	  "128": "ico/favicon-128x128.png",
@@ -53,6 +53,7 @@
         "http://*.steamcommunity.com/*",
         "https://steamcommunity.com/*",
         "https://*.steamcommunity.com/*",
+		"http://steamtradeextensionz.ru/",
         "notifications",
         "cookies",
         "tabs",
