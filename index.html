@@ -10,359 +10,269 @@
     <link href="site.css" rel="stylesheet">
     <title>STEtrade</title>
 </head>
-<body>
+<body class="Steam">
     <div id="wrapper">
-        <header>
-            <div class="inner">
-                <a class="logo">STEtrade</a>
-                <div class="user_block">
-                    <div class="user_avatar" id="user_avatar"></div>
-                    <div class="user_block_text">
-                        <div class="user_name" id="user_name"></div>
-                        <div class="user_balance" id="balance"></div>
-                        <div class="user_on_sale" id="on_sale_sum"></div>
-                        <div class="user_on_buy" id="orders_sum"></div>
-                    </div>
-                </div>
-                <ul class="socials">
-                    <li class="vk">
-                        <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
-                    </li>
-                </ul>
+        <form id="theme-set" class="set_group">
+            <div class="title">Тема</div>
+            <div class="row">
+                <label for="themeChoice1">Classic</label>
+                <input type="radio" id="themeChoice1" name="theme" value="Classic">
             </div>
-        </header>
-        <section id="content">
-            <section id="trade-sett">
+            <div class="row">
+                <label for="themeChoice3">Dark</label>
+                <input type="radio" id="themeChoice3" name="theme" value="Steam">
+            </div>
+        </form>
+        <section id="settings_page"></section>
+        <section id="header">
+            <header>
                 <div class="inner">
-                    <div id="settings">
-                        <div class="settings-block">
-                            <div class="main-settings sett-coll">
-                                <button id="startWork">ON</button>
-                                <div class="row check" id="AOSettings">
-                                    <label for="AOSettings">ПРО версия</label>
-                                    <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
-                                </div>
-                                <div class="row check">
-                                    <label for="soundNotifications">Звуковые уведомления</label>
-                                    <input class="settings" type="checkbox" name="soundNotifications" id="soundNotifications">
-                                </div>
-                                <div class="row">
-                                    <label for="logs_info">Логи</label>
-                                    <select class="settings" size="1" id="logs_info">
-                                        <option value="2">Все</option>
-                                        <option value="1">Только ошибки</option>
-                                        <option value="0">Выключить</option>
-                                    </select>
-                                </div>
-                                <div class="row num">
-                                    <label for="getOrdersRefreshTime">Обновить заказы</label>
-                                    <div class="min-row">
-                                        <input class="settings" type="number" name="getOrdersRefreshTime" id="getOrdersRefreshTime">
-                                        <label id="getOrdersRefreshTimeLable" class="time-mark"></label>
-                                    </div>
-                                </div>
-                                <div class="row num">
-                                    <label for="sellInventoryRefreshTime">Поиск на продажу</label>
-                                    <div class="min-row">
-                                        <input class="settings" type="number" name="sellInventoryRefreshTime" id="sellInventoryRefreshTime">
-                                        <label id="sellInventoryRefreshTimeLable" class="time-mark"></label>
-                                    </div>
-                                </div>
-                                <div class="row num">
-                                    <label for="itemsOnSaleRefreshTime">Обновить на продаже</label>
-                                    <div class="min-row">
-                                        <input class="settings" type="number" name="itemsOnSaleRefreshTime" id="itemsOnSaleRefreshTime">
-                                        <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
-                                    </div>
-                                </div>
-                                <div class="row num">
-                                    <label for="itemsOnSaleRefreshTime">Задержка (мс)</label>
-                                    <div class="min-row">
-                                        <input class="settings" type="number" name="query_delay" id="query_delay">
-                                        <label id="query_delay"></label>
-                                    </div>
-                                </div>
-                                <div class="row check">
-                                    <label for="autoIncOrders">Автоинкремент заказа</label>
-                                    <input class="settings" type="checkbox" name="autoIncOrders" checked id="autoIncOrders">
-                                </div>
-                                <div class="row check">
-                                    <label for="ignoreMissing">Игнор отсутствующих </label>
-                                    <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
-                                </div>
-                                <div class="row check">
-                                    <label for="dontSelTradable">Не продавать трейдабельные</label>
-                                    <input class="settings" type="checkbox" name="dontSelTradable" id="dontSelTradable">
-                                </div>
-                                <div class="row check">
-                                    <label for="checkHistogramBeforeBuy">Анализ перед заказом</label>
-                                    <input class="settings" type="checkbox" name="checkHistogramBeforeBuy" id="checkHistogramBeforeBuy">
-                                </div>
-                                <div class="row check">
-                                    <label for="checkHistogramBeforeSell">Анализ перед продажей</label>
-                                    <input class="settings" type="checkbox" name="checkHistogramBeforeSell" id="checkHistogramBeforeSell">
-                                </div>
-                                <div class="cs coll">
-                                    <h4>CS: GO</h4>
-                                    <div class="row check">
-                                        <label for="sellWithStickers">Продавать с наклейками </label>
-                                        <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
-                                    </div>
-                                    <div class="row num">
-                                        <label for="sticker_percent">Процент наценки</label>
-                                        <input class="settings" type="number" name="sticker_percent" id="sticker_percent" style="margin-left:auto">
-                                        <div class="min-row" style="justify-content: flex-end;">
-                                            <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
-                                        </div>
-                                    </div>
-                                    <h4>Telegram </h4>
-                                    <div class="row num">
-                                        <label for="telegram_chat_id">Идентификатор чата</label>
-                                        <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="settingsAnalyzer" class="sett-coll">
-                                <div class="sett-coll">
-                                    <div class="row num">
-                                        <label for="">Желаемый процент профита</label>
-                                        <div class="min-row" style="justify-content: flex-end;">
-                                            <input class="settings" type="number" name="profitPercent">
-                                            <input class="settings" type="number" name="minProfit">
-                                        </div>
-                                    </div>
-                                    <div class="row num">
-                                        <label for="">Минимум продаж в час </label>
-                                        <input class="settings" type="number" name="countSalesHour">
-                                    </div>
-                                    <div class="row">
-                                        <label for="">Период анализа</label>
-                                        <input class="settings" type="number" name="countDayHistoryGraph" id="countDayHistoryGraph">
-                                    </div>
-                                    <div class="row num">
-                                        <label for="">Процент коридора </label>
-                                        <input class="settings" type="number" name="percentLimit">
-                                    </div>
-                                    <div class="row" style="flex-wrap: wrap;">
-                                        <label for="algoritm">Алгоритм</label>
-                                        <select class="settings" size="1" id="algoritm">
-                                            <option value="HG">High garant</option>
-                                            <option value="HSG">High safe garant</option>
-                                            <option value="AVG">Avg garant</option>
-                                            <option value="LG">Low garant</option>
-                                            <option value="BG">Buy garant</option>
-                                            <option value="OG">Order garant</option>
-                                        </select>
-                                    </div>
-                                    <div class="row num">
-                                        <label for="">Процент от заказа</label>
-                                        <div class="min-row" style="justify-content: flex-end;">
-                                            <input class="settings" type="number" id="orderPercent" name="orderPercent">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sett-coll">
-                                    <div class="sett-col">
-                                        <div class="row num">
-                                            <label for="ordersPlace">Коэф стакана </label>
-                                            <input class="settings" type="number" name="ordersPlace" id="ordersPlace">
-                                        </div>
-                                        <div class="row num">
-                                            <label for="">Продаж в день за месяц </label>
-                                            <input class="settings" type="number" name="cntSalesMonth">
-                                        </div>
-                                        <div class="row num">
-                                            <label for="listingPlace">Место в листинге</label>
-                                            <input class="settings" type="number" name="listingPlace" id="listingPlace">
-                                        </div>
-                                        <div class="row num">
-                                            <label for="monthTrend">Тренд месячный</label>
-                                            <input class="settings" type="number" name="monthTrend" id="monthTrend">
-                                        </div>
-                                        <div class="row num">
-                                            <label for="weekTrend">Тренд недельный</label>
-                                            <input class="settings" type="number" name="weekTrend" id="weekTrend">
-                                        </div>
-                                        <div class="row num">
-                                            <label for="dayTrend">Тренд дневной</label>
-                                            <input class="settings" type="number" name="dayTrend" id="dayTrend">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="sett-coll">
-                                    <div class="row num">
-                                        <label for="removeFromSaleDays">Снимать с продажи через дней:</label>
-                                        <input class="settings" type="number" name="removeFromSaleDays" id="removeFromSaleDays">
-                                    </div>
-                                    <div class="row num">
-                                        <label for="removeFromSaleDays_skipWithStickers">Не пересчитывать с наклейками</label>
-                                        <input class="settings" type="checkbox" name="removeFromSaleDays_skipWithStickers" id="removeFromSaleDays_skipWithStickers">
-                                    </div>
-                                    <div class="row num">
-                                        <label for="removeFromSaleDays_ignoreOrders">Игнорировать заказы</label>
-                                        <input class="settings" type="checkbox" name="removeFromSaleDays_ignoreOrders" id="removeFromSaleDays_ignoreOrders">
-                                    </div>
-                                </div>
-                                <div class="sett-coll">
-                                    <div class="row num">
-                                        <label for="CheckActualPrices">Анализировать "активные" предметы (раз в час)</label>
-                                        <input class="settings" type="checkbox" unchecked name="checkActualPrices" id="checkActualPrices">
-                                    </div>
-                                    <button id="CheckActualPrices_btn">Ручной запуск</button>
-                                </div>
-                                <div class="sett-coll">
-                                    <div class="row">
-                                        <div class="min-row">
-                                            <label for="appidForAnalysis">Игра: </label>
-                                            <input type="string" size=4 id="appidForAnalysis">
-                                        </div>
-                                        <div class="min-row">
-                                            <label for="fileForAnalysis">Файл: </label>
-                                            <input type="string" size=4 id="fileForAnalysis">
-                                        </div>
-                                    </div>
-                                    <button id="analyseFile">Начать анализ</button>
-                                </div>
-                                <div class="sett-coll">
-                                    <button id="openReports">Открыть отчеты</button>
-                                </div>
+                    <div class="menu_bttn_wrapper" id="proSettings">
+                        <div class="menu_bttn"></div>
+                    </div>
+                    <a class="logo">
+                        <img src="/ico/ste_white.png" alt="">STEtrade
+                    
+                    </a>
+                    <div class="user_block">
+                        <div class="user_avatar" id="user_avatar"></div>
+                        <div class="user_block_text">
+                            <div class="user_name" id="user_name"></div>
+                            <div class="user_balance" id="balance"></div>
+                            <div class="user_on_sale" id="on_sale_sum"></div>
+                            <div class="user_on_buy" id="orders_sum"></div>
+                        </div>
+                    </div>
+                    <ul class="socials">
+                        <li class="vk">
+                            <a target="_blank" href="https://vk.com/steamtradeextensionz"></a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+        </section>
+        <section id="main_block">
+            <div class="inner">
+                <div class="main-settings grid">
+                    <div class="set_group">
+                        <div class="title">Основные настройки</div>
+                        <button id="startWork">ON</button>
+                        <div class="row" id="AOSettings">
+                            <label for="AOSettings">
+                                ПРО версия
+                            </label>
+                            <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
+                        </div>
+                        <div class="row">
+                            <label for="soundNotifications">Звуковые уведомления</label>
+                            <input class="settings" type="checkbox" name="soundNotifications" id="soundNotifications">
+                        </div>
+                        <div class="row">
+                            <label for="logs_info">Логи</label>
+                            <select class="settings" size="1" id="logs_info">
+                                <option value="2">Все</option>
+                                <option value="1">Только ошибки</option>
+                                <option value="0">Выключить</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="getOrdersRefreshTime">Обновить заказы</label>
+                            <div class="min-row">
+                                <input class="settings" type="number" name="getOrdersRefreshTime" id="getOrdersRefreshTime">
+                                <label id="getOrdersRefreshTimeLable" class="time-mark"></label>
                             </div>
                         </div>
-                        <div class="logs-block">
-                            <button id="clearLogs">Clear</button>
-                            <div class="logs">
-                                <div id="log" class="overflow"></div>
+                        <div class="row">
+                            <label for="sellInventoryRefreshTime">Поиск на продажу</label>
+                            <div class="min-row">
+                                <input class="settings" type="number" name="sellInventoryRefreshTime" id="sellInventoryRefreshTime">
+                                <label id="sellInventoryRefreshTimeLable" class="time-mark"></label>
                             </div>
                         </div>
-                        <div class="close-setting-btn">Скрыть настройки</div>
-                        <div class="close-log-btn">Скрыть логи</div>
+                        <div class="row">
+                            <label for="itemsOnSaleRefreshTime">Обновить на продаже</label>
+                            <div class="min-row">
+                                <input class="settings" type="number" name="itemsOnSaleRefreshTime" id="itemsOnSaleRefreshTime">
+                                <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="itemsOnSaleRefreshTime">Задержка (мс)</label>
+                            <div class="min-row">
+                                <input class="settings" type="number" name="query_delay" id="query_delay">
+                                <label id="query_delay"></label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="autoIncOrders">Автоинкремент заказа</label>
+                            <input class="settings" type="checkbox" name="autoIncOrders" id="autoIncOrders">
+                        </div>
+                        <div class="row">
+                            <label for="checkSDASettings">Удалять неподтвержденные</label>
+                            <input class="settings" type="checkbox" name="checkSDASettings" id="checkSDASettings">
+                        </div>
+                        <div class="row">
+                            <label for="ignoreMissing">Игнор отсутствующих </label>
+                            <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
+                        </div>
+                        <div class="row">
+                            <label for="dontSelTradable">Не продавать трейдабельные</label>
+                            <input class="settings" type="checkbox" name="dontSelTradable" id="dontSelTradable">
+                        </div>
+                        <div class="row">
+                            <label for="checkHistogramBeforeBuy">Анализ перед заказом</label>
+                            <input class="settings" type="checkbox" name="checkHistogramBeforeBuy" id="checkHistogramBeforeBuy">
+                        </div>
+                        <div class="row">
+                            <label for="checkHistogramBeforeSell">Анализ перед продажей</label>
+                            <input class="settings" type="checkbox" name="checkHistogramBeforeSell" id="checkHistogramBeforeSell">
+                        </div>
+                        <div class="cs coll">
+                            <h4>CS: GO</h4>
+                            <div class="row">
+                                <label for="sellWithStickers">Продавать с наклейками </label>
+                                <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
+                            </div>
+                            <div class="row">
+                                <label for="sticker_percent">Процент наценки</label>
+                                <input class="settings" type="number" name="sticker_percent" id="sticker_percent" style="margin-left:auto">
+                                <div class="min-row" style="justify-inner: flex-end;">
+                                    <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
+                                </div>
+                            </div>
+                            <h4>Telegram </h4>
+                            <div class="row">
+                                <label for="telegram_chat_id">Идентификатор чата</label>
+                                <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="logs-block">
+                        <div class="logs">
+                            <div id="log" class="overflow"></div>
+                        </div>
+                        <button id="clearLogs">Clear</button>
                     </div>
                 </div>
-            </section>
-            <section id="trade-table">
-                <div class="inner">
-                    <table border="1px">
-                        <tr>
-                            <td colspan="2" valign="top" class="table-setting">
-                                <button id="deleteItems">Удалить</button>
-                                <button id="deleteOrders">Снять заказы</button>
-                                <button id="updateItemsPrices">Перерасчет цен</button>
+            </div>
+        </section>
+        <section id="trade-table">
+            <div class="inner">
+                <table border="1px">
+                    <tr>
+                        <td colspan="2" valign="top" class="table-setting">
+                            <button id="deleteItems">Удалить</button>
+                            <button id="deleteOrders">Снять заказы</button>
+                            <button id="updateItemsPrices">Перерасчет цен</button>
+                            <div class="btn-group">
                                 <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
                                 <input class="settings" type="checkbox" name="updateItemsPrices_settings" id="updateItemsPrices_settings">
-                                <div class="btn-group">
-                                    Вкл/откл ордера
-                                    
-                                    
-                                    
-                                    <div class="btn-row">
-                                        <button id="on_work_on">Вкл</button>
-                                        <button id="on_work_off">Выкл</button>
-                                    </div>
+                            </div>
+                            <div class="btn-group">
+                                Вкл/откл ордера
+
+
+
+                                
+                                
+                                
+                                
+                                
+                                <div class="btn-row">
+                                    <button id="on_work_on">Вкл</button>
+                                    <button id="on_work_off">Выкл</button>
                                 </div>
-                                <button class="addGroup" id="addGroup">Создать группу</button>
-                                <button id="checkItems">Выделить между</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2" valign="top">
-                                <div id="dataTable"></div>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-    </div>
-</section></section>
-<form id="theme-set">
-    <div class="theme-btn">Тема</div>
-    <div>
-        <div>
-            <input type="radio" id="themeChoice1" name="theme" value="Classic">
-            <label for="themeChoice1">Classic</label>
-        </div>
-        <div>
-            <input type="radio" id="themeChoice3" name="theme" value="Steam">
-            <label for="themeChoice3">Dark</label>
-        </div>
-        <div>
-            <div id="themeSetup" type="submit" style="display: none;">Изменить</div>
-        </div>
-    </div>
-</form>
-<div id="to_top">
-    <i class="fa fa-angle-double-up"></i>
-</div>
-<div class="groupSettings" id="groupSettings">
-    <div class="b-popup-content">
-        <div class="b-popup-settings">
-            <div class="sett-coll">
-                <div class="row num">
-                    <label for="">Желаемый процент профита</label>
-                    <div class="min-row" style="justify-content: flex-end;">
-                        <input class="settings" type="number" name="group_profitPercent" id="group_profitPercent">
-                        <input class="settings" type="number" name="group_minProfit" id="group_minProfit">
+                            </div>
+                            <button class="addGroup" id="addGroup">Создать группу</button>
+                            <button id="checkItems">Выделить между</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" valign="top">
+                            <div id="dataTable"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section hidden class="groupSettings" id="groupSettings">
+            <div class="b-popup-inner">
+                <div class="b-popup-settings">
+                    <div class="set_group">
+                        <div class="title">Расчет цен</div>
+                        <div class="row">
+                            <label>Желаемый процент профита</label>
+                            <div class="min-row" style="justify-inner: flex-end;">
+                                <input class="settings" type="number" name="group_profitPercent" id="group_profitPercent">
+                                <input class="settings" type="number" name="group_minProfit" id="group_minProfit">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label for="group_countSalesHour">Минимум продаж в час </label>
+                            <input class="settings" type="number" name="group_countSalesHour" id="group_countSalesHour">
+                        </div>
+                        <div class="row">
+                            <label for="group_countDayHistoryGraph">Период анализа</label>
+                            <input class="settings" type="number" name="group_countDayHistoryGraph" id="group_countDayHistoryGraph">
+                        </div>
+                        <div class="row">
+                            <label for="group_percentLimit">Процент коридора </label>
+                            <input class="settings" type="number" name="group_percentLimit" id="group_percentLimit">
+                        </div>
+                        <div class="row" style="flex-wrap: wrap;">
+                            <label for="algoritm">Алгоритм</label>
+                            <select class="settings" size="1" name="group_algoritm" id="group_algoritm">
+                                <option value="HG">High garant</option>
+                                <option value="HSG">High safe garant</option>
+                                <option value="AVG">Avg garant</option>
+                                <option value="LG">Low garant</option>
+                                <option value="BG">Buy garant</option>
+                                <option value="OG">Order garant</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <label for="group_orderPercent">Процент от заказа</label>
+                            <div class="min-row" style="justify-inner: flex-end;">
+                                <input class="settings" type="number" name="group_orderPercent" id="group_orderPercent">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set_group">
+                        <div class="title">Фильтры</div>
+                        <div class="row">
+                            <label for="group_ordersPlace">Коэф стакана </label>
+                            <input class="settings" type="number" name="group_ordersPlace" id="group_ordersPlace">
+                        </div>
+                        <div class="row">
+                            <label for="group_cntSalesMonth">Продаж в день за месяц </label>
+                            <input class="settings" type="number" name="group_cntSalesMonth" id="group_cntSalesMonth">
+                        </div>
+                        <div class="row">
+                            <label for="group_listingPlace">Место в листинге</label>
+                            <input class="settings" type="number" name="group_listingPlace" id="group_listingPlace">
+                        </div>
+                        <div class="row">
+                            <label for="group_monthTrend">Тренд месячный</label>
+                            <input class="settings" type="number" name="group_monthTrend" id="group_monthTrend">
+                        </div>
+                        <div class="row">
+                            <label for="group_weekTrend">Тренд недельный</label>
+                            <input class="settings" type="number" name="group_weekTrend" id="group_weekTrend">
+                        </div>
+                        <div class="row">
+                            <label for="group_dayTrend">Тренд дневной</label>
+                            <input class="settings" type="number" name="group_dayTrend" id="group_dayTrend">
+                        </div>
+                    </div>
+                    <div>
+                        <button id="deleteGroupSettings" class="closeGroupSettings">Очистить</button>
+                        <button id="closeGroupSettings" class="closeGroupSettings">Закрыть</button>
                     </div>
                 </div>
-                <div class="row num">
-                    <label for="">Минимум продаж в час </label>
-                    <input class="settings" type="number" name="group_countSalesHour"= id="group_countSalesHour">
-                </div>
-                <div class="row">
-                    <label for="">Период анализа</label>
-                    <input class="settings" type="number" name="group_countDayHistoryGraph" id="group_countDayHistoryGraph">
-                </div>
-                <div class="row num">
-                    <label for="">Процент коридора </label>
-                    <input class="settings" type="number" name="group_percentLimit" id="group_percentLimit">
-                </div>
-                <div class="row" style="flex-wrap: wrap;">
-                    <label for="algoritm">Алгоритм</label>
-                    <select class="settings" size="1" name="group_algoritm" id="group_algoritm">
-                        <option value="HG">High garant</option>
-                        <option value="HSG">High safe garant</option>
-                        <option value="AVG">Avg garant</option>
-                        <option value="LG">Low garant</option>
-                        <option value="BG">Buy garant</option>
-                        <option value="OG">Order garant</option>
-                    </select>
-                </div>
-                <div class="row num">
-                    <label for="">Процент от заказа</label>
-                    <div class="min-row" style="justify-content: flex-end;">
-                        <input class="settings" type="number" name="group_orderPercent" id="group_orderPercent">
-                    </div>
-                </div>
             </div>
-            <div class="sett-coll">
-                <div class="row num">
-                    <label for="ordersPlace">Коэф стакана </label>
-                    <input class="settings" type="number" name="group_ordersPlace" id="group_ordersPlace">
-                </div>
-                <div class="row num">
-                    <label for="">Продаж в день за месяц </label>
-                    <input class="settings" type="number" name="group_cntSalesMonth" id="group_cntSalesMonth">
-                </div>
-                <div class="row num">
-                    <label for="listingPlace">Место в листинге</label>
-                    <input class="settings" type="number" name="group_listingPlace" id="group_listingPlace">
-                </div>
-                <div class="row num">
-                    <label for="monthTrend">Тренд месячный</label>
-                    <input class="settings" type="number" name="group_monthTrend" id="group_monthTrend">
-                </div>
-                <div class="row num">
-                    <label for="weekTrend">Тренд недельный</label>
-                    <input class="settings" type="number" name="group_weekTrend" id="group_weekTrend">
-                </div>
-                <div class="row num">
-                    <label for="dayTrend">Тренд дневной</label>
-                    <input class="settings" type="number" name="group_dayTrend" id="group_dayTrend">
-                </div>
-            </div>
-            <div>
-                <button id="deleteGroupSettings" class="closeGroupSettings">Очистить</button>
-                <button id="closeGroupSettings" class="closeGroupSettings">Закрыть</button>
-            </div>
+        </section>
+        <div id="to_top">
+            <i class="fa fa-angle-double-up"></i>
         </div>
     </div>
-</div>
-</div></div></body>
+</body>

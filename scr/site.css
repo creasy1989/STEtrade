@@ -48,6 +48,6 @@
     font-weight: 600;
 }
 
-# .button_add_item_grey:hover {
+.button_add_item_grey:hover {
     background: 2e343a;
 }
