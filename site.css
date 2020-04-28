@@ -439,9 +439,7 @@ header .menu_bttn_wrapper .menu_bttn {
   padding: 0;
 }
 /* END header*/
-html.open {
-  overflow: hidden;
-}
+
 .open #settings_page {
   display: block;
 }
