@@ -58,8 +58,7 @@
                         <div class="title">Основные настройки</div>
                         <button id="startWork">ON</button>
                         <div class="row" id="AOSettings">
-                            <label for="AOSettings">
-                                ПРО версия
+                            <label for="AOSettings">ПРО версия
                             </label>
                             <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
                         </div>
@@ -127,10 +126,14 @@
                             <label for="checkHistogramBeforeSell">Анализ перед продажей</label>
                             <input class="settings" type="checkbox" name="checkHistogramBeforeSell" id="checkHistogramBeforeSell">
                         </div>
+                        <div class="row">
+                            <label for="checkFloat">Проверять флоат</label>
+                            <input class="settings" type="checkbox" name="checkFloat" id="checkFloat">
+                        </div>                        
                         <div class="cs coll">
                             <h4>CS: GO</h4>
                             <div class="row">
-                                <label for="sellWithStickers">Продавать с наклейками </label>
+                                <label for="sellWithStickers">Продавать с наклейками (нашивками) </label>
                                 <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
                             </div>
                             <div class="row">
@@ -139,6 +142,9 @@
                                 <div class="min-row" style="justify-inner: flex-end;">
                                     <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                 </div>
+                            </div>
+                            <div class="row">
+                                <button id="filter_stickers_button">Список фильтров</button>
                             </div>
                             <h4>Telegram </h4>
                             <div class="row">
@@ -170,12 +176,6 @@
                             </div>
                             <div class="btn-group">
                                 Вкл/откл ордера
-
-
-
-                                
-                                
-                                
                                 
                                 
                                 <div class="btn-row">
@@ -222,12 +222,12 @@
                         <div class="row" style="flex-wrap: wrap;">
                             <label for="algoritm">Алгоритм</label>
                             <select class="settings" size="1" name="group_algoritm" id="group_algoritm">
-                                <option value="HG">High garant</option>
-                                <option value="HSG">High safe garant</option>
-                                <option value="AVG">Avg garant</option>
-                                <option value="LG">Low garant</option>
-                                <option value="BG">Buy garant</option>
-                                <option value="OG">Order garant</option>
+                                <option value="HG">Максимальный</option>
+                                <option value="HSG">Макс безопасный</option>
+                                <option value="AVG">Средний</option>
+                                <option value="LG">Низкий</option>
+                                <option value="BG">Покупной</option>
+                                <option value="OG">Процент от заказа</option>
                             </select>
                         </div>
                         <div class="row">
@@ -253,20 +253,52 @@
                         </div>
                         <div class="row">
                             <label for="group_monthTrend">Тренд месячный</label>
-                            <input class="settings" type="number" name="group_monthTrend" id="group_monthTrend">
+                            <div class="min-row" style="justify-inner: flex-end;">
+                                <input class="settings" type="number" name="group_monthTrend_up" id="group_monthTrend_up">
+                                <input class="settings" type="number" name="group_monthTrend" id="group_monthTrend">
+                            </div>
                         </div>
                         <div class="row">
                             <label for="group_weekTrend">Тренд недельный</label>
-                            <input class="settings" type="number" name="group_weekTrend" id="group_weekTrend">
+                            <div class="min-row" style="justify-inner: flex-end;">
+                                <input class="settings" type="number" name="group_weekTrend_up" id="group_weekTrend_up">
+                                <input class="settings" type="number" name="group_weekTrend" id="group_weekTrend">
+                            </div>
                         </div>
                         <div class="row">
                             <label for="group_dayTrend">Тренд дневной</label>
-                            <input class="settings" type="number" name="group_dayTrend" id="group_dayTrend">
+                            <div class="min-row" style="justify-inner: flex-end;">
+                                <input class="settings" type="number" name="group_dayTrend_up" id="group_dayTrend_up">
+                                <input class="settings" type="number" name="group_dayTrend" id="group_dayTrend">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="set_group">
+                        <div class="title">Снятие заказов</div>
+                        <div class="row">
+                            <label for="group_cancelOrderIfLow">Если на продаже больше чем в заказке</label>
+                            <input class="settings" type="checkbox" name="group_cancelOrderIfLow" id="group_cancelOrderIfLow">
                         </div>
                     </div>
                     <div>
                         <button id="deleteGroupSettings" class="closeGroupSettings">Очистить</button>
                         <button id="closeGroupSettings" class="closeGroupSettings">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section hidden class="groupSettings" id="filter_stickers">
+            <div class="b-popup-inner">
+                <div class="b-popup-settings">
+                    <div class="set_group">
+                        <div class="title">Список наклеек</div>
+                        <div class="row">
+                            <textarea name="filter_stickers_list" id="filter_stickers_list" cols="100" rows="10"></textarea>
+                        </div>
+                        <div>
+                            <button id="filter_stickers_list_clear" class="filter_stickers_list_clear">Очистить</button>
+                            <button id="filter_stickers_list_close" class="filter_stickers_list_close">Закрыть</button>
+                        </div>
                     </div>
                 </div>
             </div>

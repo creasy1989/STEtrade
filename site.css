@@ -193,6 +193,7 @@ body button {
   color: #fff;
 }
 body input {
+  /* width: 75px; */
   color: #fff;
 }
 body div {
@@ -1185,4 +1186,6 @@ body.Classic .b-popup-settings button:hover{
     background: #077401;
 }
 
-
+input[name="b_summ"], input[name="s_summ"], input[name="s_summ_steam"] {
+    width: 75px;
+}
