@@ -1189,3 +1189,20 @@ body.Classic .b-popup-settings button:hover{
 input[name="b_summ"], input[name="s_summ"], input[name="s_summ_steam"] {
     width: 75px;
 }
+
+progress {
+  height: 40px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+progress:before {
+  content: attr(data-label);
+  font-size: 0.8em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -2,13 +2,13 @@
     "background": {
         "scripts": [
             "scr/jquery.js",
-			"index.js"			
+			"index.js"		
         ]
     },
     "manifest_version": 2,
-    "name": "STEtrade_v1.31",
+    "name": "STEtrade_v1.32",
     "description": "Автоматическая покупка/продажа предметов steam",
-    "version": "1.31",
+    "version": "1.32",
     "icons": {      
 	  "96": "ico/favicon-96x96.png",
 	  "128": "ico/favicon-128x128.png",
@@ -26,21 +26,16 @@
                 "scr/jquery.js"
             ],
 			"css":["scr/site.css"],
-            "matches": [
-                "http://steamcommunity.com/*",
-                "http://*.steamcommunity.com/*",
-                "https://steamcommunity.com/*"
-            ],
+            "matches": ["https://steamcommunity.com/market/"],
             "run_at": "document_end"
         },
         {
             "all_frames": true,
             "js": [
-                "scr/script_listings.js"
+                "scr/script_listings.js",
+                "scr/jquery.js"                
             ],
-            "matches": [
-                "https://steamcommunity.com/market/listings/*"
-            ],
+            "matches": ["https://steamcommunity.com/market/listings/*"],
             "run_at": "document_end"
         }
     ],
@@ -59,6 +54,7 @@
         "cookies",
         "tabs",
         "browsingData",
-        "storage"
+        "storage",
+		"proxy"
     ]
 }

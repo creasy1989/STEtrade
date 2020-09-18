@@ -32,7 +32,6 @@
                     </div>
                     <a class="logo">
                         <img src="/ico/ste_white.png" alt="">STEtrade
-                    
                     </a>
                     <div class="user_block">
                         <div class="user_avatar" id="user_avatar"></div>
@@ -61,6 +60,11 @@
                             <label for="AOSettings">ПРО версия
                             </label>
                             <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
+                        </div>
+                        <div class="row">
+                            <label for="autoStart">Старт при открытии
+                            </label>
+                            <input class="settings" type="checkbox" name="autoStart" id="autoStart">
                         </div>
                         <div class="row">
                             <label for="soundNotifications">Звуковые уведомления</label>
@@ -129,7 +133,7 @@
                         <div class="row">
                             <label for="checkFloat">Проверять флоат</label>
                             <input class="settings" type="checkbox" name="checkFloat" id="checkFloat">
-                        </div>                        
+                        </div>
                         <div class="cs coll">
                             <h4>CS: GO</h4>
                             <div class="row">
@@ -153,6 +157,7 @@
                                 <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
                             </div>
                         </div>
+                        <div id="progress_bar_div"></div>
                     </div>
                     <div class="logs-block">
                         <div class="logs">
@@ -177,7 +182,6 @@
                             </div>
                             <div class="btn-group">
                                 Вкл/откл ордера
-                                
                                 
                                 <div class="btn-row">
                                     <button id="on_work_on">Вкл</button>
@@ -207,10 +211,6 @@
                                 <input class="settings" type="number" name="group_profitPercent" id="group_profitPercent">
                                 <input class="settings" type="number" name="group_minProfit" id="group_minProfit">
                             </div>
-                        </div>
-                        <div class="row">
-                            <label for="group_countSalesHour">Минимум продаж в час </label>
-                            <input class="settings" type="number" name="group_countSalesHour" id="group_countSalesHour">
                         </div>
                         <div class="row">
                             <label for="group_countDayHistoryGraph">Период анализа</label>
@@ -279,6 +279,10 @@
                         <div class="row">
                             <label for="group_cancelOrderIfLow">Если на продаже больше чем в заказе</label>
                             <input class="settings" type="checkbox" name="group_cancelOrderIfLow" id="group_cancelOrderIfLow">
+                        </div>
+                        <div class="row">
+                            <label for="group_dontDeleteOrders">Не снимать заказы при уменьшении баланса</label>
+                            <input class="settings" type="checkbox" name="group_dontDeleteOrders" id="group_dontDeleteOrders">
                         </div>
                     </div>
                     <div>
