@@ -536,8 +536,8 @@ header .menu_bttn_wrapper .menu_bttn {
 }
 .set_group .helper {
   border-radius: 100%;
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   background-color: #324965;
   border-width: 1px;
   border-style: solid;
@@ -545,7 +545,7 @@ header .menu_bttn_wrapper .menu_bttn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 9px;
+  font-size: 13px;
   cursor: help;
   position: relative;
   margin-left: 5px;
@@ -554,7 +554,7 @@ header .menu_bttn_wrapper .menu_bttn {
   position: absolute;
   top: 0;
   font-size: 14px;
-  transform: translate(-97%, -115%);
+  transform: translate(5%, -100%);
   left: 0px;
   padding: 16px;
   background: #3a5cab;
@@ -568,6 +568,27 @@ header .menu_bttn_wrapper .menu_bttn {
 .set_group .helper:hover .help_text {
   display: block;
 }
+
+body.Classic .set_group .helper .help_text {  
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  transform: translate(5%, -100%);
+  left: 0px;
+  padding: 16px;
+  background: #dddddd;
+  border-radius: 6px;
+  max-width: 230px;
+  word-wrap: break-word;
+  display: none;
+  transition: 0.3s all;
+  width: 230px;
+}
+
+body.Classic .set_group .helper:hover .help_text {
+  display: block;
+}
+
 .set_group .title {
   font-size: 130%;
   font-weight: bold;
@@ -648,6 +669,7 @@ table button:hover {
 table tr {
   border: 1px solid #00000030;
   transition: background-color 0.2s ease-in-out;
+  /* background: green; */
 }
 table.tab tr {
   border: 1px solid transparent;
@@ -671,6 +693,7 @@ table th {
 table td {
   border: none;
   border-radius: 5px;
+  /* background: linear-gradient(to right, red, 10%, yellow, 40%, green); */
 }
 table td.table {
   cursor: pointer;
@@ -1175,7 +1198,6 @@ body.Classic .b-popup-settings button:hover{
     font-size: 14px;
     padding: 3px;
     font-weight: 400;
-    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #31363a, #2b2e34) repeat scroll 0 0;
     background: #31363a;
     margin-bottom: 10px;
 }

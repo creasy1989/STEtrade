@@ -57,21 +57,57 @@
                         <div class="title">Основные настройки</div>
                         <button id="startWork">ON</button>
                         <div class="row" id="AOSettings">
-                            <label for="AOSettings">ПРО версия
+                            <label for="AOSettings">
+                                ПРО версия
+                                
+                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Включить функционал ПРО версии</div>
+                                </div>
                             </label>
                             <input class="settings" type="checkbox" name="AOSettings" id="AOSettings">
                         </div>
                         <div class="row">
-                            <label for="autoStart">Старт при открытии
+                            <label for="autoStart">
+                                Старт при открытии
+                                
+                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Автоматический старт при открытии Бота</div>
+                                </div>
                             </label>
                             <input class="settings" type="checkbox" name="autoStart" id="autoStart">
                         </div>
                         <div class="row">
-                            <label for="soundNotifications">Звуковые уведомления</label>
+                            <label for="soundNotifications">
+                                Звуковые уведомления                                
+                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Включить звуковые уведомления
+                                    </div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="soundNotifications" id="soundNotifications">
                         </div>
                         <div class="row">
-                            <label for="logs_info">Логи</label>
+                            <label for="logs_info">
+                                Логи                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Тип логирования</div>
+                                </div>
+                            </label>
                             <select class="settings" size="1" id="logs_info">
                                 <option value="2">Все</option>
                                 <option value="1">Только ошибки</option>
@@ -79,81 +115,189 @@
                             </select>
                         </div>
                         <div class="row">
-                            <label for="getOrdersRefreshTime">Обновить заказы</label>
+                            <label for="getOrdersRefreshTime">
+                                Обновить заказы                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Частота обновления заказов (минуты)</div>
+                                </div>
+                            </label>
                             <div class="min-row">
                                 <input class="settings" type="number" name="getOrdersRefreshTime" id="getOrdersRefreshTime">
                                 <label id="getOrdersRefreshTimeLable" class="time-mark"></label>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="sellInventoryRefreshTime">Поиск на продажу</label>
+                            <label for="sellInventoryRefreshTime">
+                                Поиск на продажу                                
+                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Частота поиска предметов на продажу (минуты)</div>
+                                </div>
+                            </label>
                             <div class="min-row">
                                 <input class="settings" type="number" name="sellInventoryRefreshTime" id="sellInventoryRefreshTime">
                                 <label id="sellInventoryRefreshTimeLable" class="time-mark"></label>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="itemsOnSaleRefreshTime">Обновить на продаже</label>
+                            <label for="itemsOnSaleRefreshTime">
+                                Обновить на продаже                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Частота обновления информации о предметах на продаже</div>
+                                </div>
+                            </label>
                             <div class="min-row">
                                 <input class="settings" type="number" name="itemsOnSaleRefreshTime" id="itemsOnSaleRefreshTime">
                                 <label id="itemsOnSaleRefreshTimeLable" class="time-mark"></label>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="itemsOnSaleRefreshTime">Задержка (мс)</label>
+                            <label for="itemsOnSaleRefreshTime">
+                                Задержка (мс)                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Время задержки между запросами (миллисекунды)</div>
+                                </div>
+                            </label>
                             <div class="min-row">
                                 <input class="settings" type="number" name="query_delay" id="query_delay">
                                 <label id="query_delay"></label>
                             </div>
                         </div>
                         <div class="row">
-                            <label for="autoIncOrders">Автоинкремент заказа</label>
+                            <label for="autoIncOrders">
+                                Автоинкремент заказа                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Увеличивает количество в заказе на 1 при раземещении заказа</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="autoIncOrders" id="autoIncOrders">
                         </div>
                         <div class="row">
-                            <label for="checkSDASettings">Удалять неподтвержденные</label>
+                            <label for="checkSDASettings">
+                                Удалять неподтвержденные                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Удалять "зависшие предметы в SDA"</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="checkSDASettings" id="checkSDASettings">
                         </div>
                         <div class="row">
-                            <label for="ignoreMissing">Игнор отсутствующих </label>
+                            <label for="ignoreMissing">
+                                Игнор отсутствующих                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Игнорировать предметы, которых нет в базе</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="ignoreMissing" id="ignoreMissing">
                         </div>
                         <div class="row">
-                            <label for="dontSelTradable">Не продавать трейдабельные</label>
+                            <label for="dontSelTradable">
+                                Не продавать трейдабельные                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Не выставлять предметы, у которых нет трейд бана</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="dontSelTradable" id="dontSelTradable">
                         </div>
                         <div class="row">
-                            <label for="checkHistogramBeforeBuy">Анализ перед заказом</label>
+                            <label for="checkHistogramBeforeBuy">
+                                Анализ перед заказом                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Вставать первым на покупку, при возможноности</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="checkHistogramBeforeBuy" id="checkHistogramBeforeBuy">
                         </div>
                         <div class="row">
-                            <label for="checkHistogramBeforeSell">Анализ перед продажей</label>
+                            <label for="checkHistogramBeforeSell">
+                                Анализ перед продажей                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Вставать первым на продажу, при возможноности</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="checkHistogramBeforeSell" id="checkHistogramBeforeSell">
                         </div>
                         <div class="row">
-                            <label for="checkFloat">Проверять флоат</label>
+                            <label for="checkFloat">
+                                Проверять флоат                                
+                                
+                                <div class="helper">
+                                    <span>?</span>
+                                    <div class="help_text">Не продавать предметы, которые попали в диапазон флоат</div>
+                                </div>
+                            </label>
                             <input class="settings" type="checkbox" name="checkFloat" id="checkFloat">
                         </div>
                         <div class="cs coll">
                             <h4>CS: GO</h4>
                             <div class="row">
-                                <label for="sellWithStickers">Продавать с наклейками (нашивками) </label>
+                                <label for="sellWithStickers">
+                                    Продавать с наклейками (нашивками)                                
+                                    
+                                    <div class="helper">
+                                        <span>?</span>
+                                        <div class="help_text">Продавать или не продавать предметы с наклейками (нашивками)</div>
+                                    </div>
+                                </label>
                                 <input class="settings" type="checkbox" name="sellWithStickers" id="sellWithStickers">
                             </div>
                             <div class="row">
-                                <label for="sticker_percent">Процент наценки</label>
+                                <label for="sticker_percent">
+                                    Процент наценки                                
+                                    
+                                    <div class="helper">
+                                        <span>?</span>
+                                        <div class="help_text">Наценка от стоимости всех наклеек ("процент" | "минимальная наценка")</div>
+                                    </div>
+                                </label>
                                 <input class="settings" type="number" name="sticker_percent" id="sticker_percent" style="margin-left:auto">
                                 <div class="min-row" style="justify-inner: flex-end;">
                                     <input class="settings" type="number" name="sticker_overprice" id="sticker_overprice">
                                 </div>
                             </div>
                             <div class="row">
-                                <button id="filter_stickers_button">Список фильтров</button>
-                                <button id="enterSecrteKey">Ввести ключ</button>
+                                <button id="filter_stickers_button">
+                                    Список фильтров                                
+                                    
+                                    <div class="helper">
+                                        <span>?</span>
+                                        <div class="help_text">Не продавать предметы, если у них есть наклейки</div>
+                                    </div>
+                                </button>
+                                <button id="enterSecrteKey">Ввести ключ
+                                </button>
                             </div>
                             <h4>Telegram </h4>
                             <div class="row">
-                                <label for="telegram_chat_id">Идентификатор чата</label>
+                                <label for="telegram_chat_id">
+                                    Идентификатор чата                                
+                                    
+                                    <div class="helper">
+                                        <span>?</span>
+                                        <div class="help_text">Ваш уникальный id для телеграмм бота</div>
+                                    </div>
+                                </label>
                                 <input class="settings" type="number" name="telegram_chat_id" id="telegram_chat_id">
                             </div>
                         </div>
@@ -175,6 +319,7 @@
                         <td colspan="2" valign="top" class="table-setting">
                             <button id="deleteItems">Удалить</button>
                             <button id="deleteOrders">Снять заказы</button>
+                            <button id="addMissingItems">Добавить отсутствующие</button>
                             <button id="updateItemsPrices">Перерасчет цен</button>
                             <div class="btn-group">
                                 <label id="updateItemsPricesLabel" for="updateItemsPrices_settings">Исключая "в работе"</label>
@@ -182,6 +327,10 @@
                             </div>
                             <div class="btn-group">
                                 Вкл/откл ордера
+                                
+                                
+                                
+                                
                                 
                                 <div class="btn-row">
                                     <button id="on_work_on">Вкл</button>
@@ -210,6 +359,7 @@
                             <div class="min-row" style="justify-inner: flex-end;">
                                 <input class="settings" type="number" name="group_profitPercent" id="group_profitPercent">
                                 <input class="settings" type="number" name="group_minProfit" id="group_minProfit">
+                                <input class="settings" type="number" name="group_lowProfit" id="group_lowProfit">
                             </div>
                         </div>
                         <div class="row">
