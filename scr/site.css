@@ -21,8 +21,35 @@
     font-weight: 600;
 }
 
+.button_del_item_red {
+    background-color: #ea2706;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border: none;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #008e2c;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px;
+    transition: .3s all;
+    background: linear-gradient(rgb(230 24 23), rgb(162 10 10)) rgb(137 48 48);
+    box-shadow: 0 1px rgba(255, 255, 255, .2) inset, 0 3px 5px rgba(65, 125, 41, 0.5), 0 0 1px 1px rgba(0, 1, 6, .2);
+    font-weight: 600;
+}
+
 .button_add_item_green:hover {
     background: #006d22
+}
+
+.button_del_item_red:hover {
+    background: #8f0e0a
 }
 
 .button_add_item_grey {
