@@ -589,6 +589,10 @@ body.Classic .set_group .helper:hover .help_text {
   display: block;
 }
 
+body.report #report table{
+  color:#000;
+}
+
 .set_group .title {
   font-size: 130%;
   font-weight: bold;

@@ -372,8 +372,19 @@
                             <input class="settings" type="number" name="group_percentLimit" id="group_percentLimit">
                         </div>
                         <div class="row" style="flex-wrap: wrap;">
-                            <label for="algoritm">Алгоритм</label>
+                            <label for="algoritm">Алгоритм продажи</label>
                             <select class="settings" size="1" name="group_algoritm" id="group_algoritm">
+                                <option value="HG">Максимальный</option>
+                                <option value="HSG">Макс безопасный</option>
+                                <option value="AVG">Средний</option>
+                                <option value="LG">Низкий</option>
+                                <option value="BG">Покупной</option>
+                                <option value="OG">Процент от заказа</option>
+                            </select>
+                        </div>
+                        <div class="row" style="flex-wrap: wrap;">
+                            <label for="algoritm_buy">Алгоритм покупки</label>
+                            <select class="settings" size="1" name="group_algoritm_buy" id="group_algoritm_buy">
                                 <option value="HG">Максимальный</option>
                                 <option value="HSG">Макс безопасный</option>
                                 <option value="AVG">Средний</option>

@@ -5,9 +5,9 @@
         ]
     },
     "manifest_version": 2,
-    "name": "STEtrade_v1.35",
+    "name": "STEtrade_v1.36",
     "description": "Бот  для работы на торговой площадке Steam",
-    "version": "1.35",
+    "version": "1.36",
     "icons": {      
 	  "96": "ico/favicon-96x96.png",
 	  "128": "ico/favicon-128x128.png",
