@@ -1,0 +1,194 @@
+<head>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic,cyrillic-ext" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="scr\jquery.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <link href="site.css" rel="stylesheet">
+    <title>STEtrade</title>
+</head>
+<body class="parser">
+    <div id="wrapper">
+        <header>
+            <div class="inner">
+                <a class="logo">STEtrade</a>
+                <ul class="socials">
+                    <li class="vk">
+                        <a target="_blank" href="https://vk.com/stetrade"></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section id="content">
+            <div class="row" style="flex-wrap: wrap;">
+                <label for="appid">Игра</label>
+                <select class="settings" size="1" id="appid">
+                    <option value="730">Counter-Strike: Global Offensive</option>
+                    <option value="570">Dota 2</option>
+                    <option value="440">Team Fortress 2</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>Цена (в рублях)</label>
+                <div class="min-row" style="justify-inner: flex-end;">
+                    От: <input class="settings" type="number" id="price_min">
+                    До: <input class="settings" type="number" id="price_max">
+                </div>
+            </div>
+            <div class="row">
+                <label>Среднее количество продаж в день (период анализа - 7 дней)</label>
+                <div class="min-row" style="justify-inner: flex-end;">
+                    От: <input class="settings" type="number" id="cnt_sales_min">
+                    До: <input class="settings" type="number" id="cnt_sales_max">
+                </div>
+            </div>
+            <br>
+            <div id="filters_csgo">
+                Фильтры csgo
+            <br>
+                <br>
+                <div class="row">
+                    <label for="filter_weapons">Исключить оружие</label>
+                    <input class="settings" type="checkbox" id="filter_weapons">
+                </div>
+                <div class="row">
+                    <label for="filter_sticker">Исключить наклейки/патчи</label>
+                    <input class="settings" type="checkbox" id="filter_sticker">
+                </div>
+                <div class="row">
+                    <label for="filter_souvenir">Исключить сувенирные предметы</label>
+                    <input class="settings" type="checkbox" id="filter_souvenir">
+                </div>
+                <div class="row">
+                    <label for="filter_agent">Исключить агентов</label>
+                    <input class="settings" type="checkbox" id="filter_agent">
+                </div>
+                <div class="row">
+                    <label for="filter_container">Исключить кейсы/ключи/инструменты и прочее</label>
+                    <input class="settings" type="checkbox" id="filter_container">
+                </div>
+            </div>
+            <div hidden id="filters_tf2">Фильтры TF2
+            </div>
+            <div hidden id="filters_dota2">
+                Фильтры Dota 2
+            <br>
+                <br>
+                <p>Исключить следующие Качества:</p>
+                <div class="row">
+                    <label for="filter_dota2_Standard">Standard</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Standard">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Inscribed">Inscribed</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Inscribed">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Auspicious">Auspicious</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Auspicious">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Heroic">Heroic</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Heroic">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Genuine">Genuine</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Genuine">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Autographed">Autographed</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Autographed">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Frozen">Frozen</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Frozen">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Cursed">Cursed</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Cursed">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Base">Base</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Base">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Corrupted">Corrupted</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Corrupted">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Infused">Infused</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Infused">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Unusual">Unusual</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Unusual">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Exalted">Exalted</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Exalted">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Elder">Elder</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Elder">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Legacy">Legacy</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Legacy">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Ascendant">Ascendant</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Ascendant">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Favored">Favored</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Favored">
+                </div>
+                <br>
+                <p>Исключить следующую Редкость:</p>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Common">Common</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Common">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Uncommon">Uncommon</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Uncommon">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Rare">Rare</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Rare">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Mythical">Mythical</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Mythical">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Immortal">Immortal</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Immortal">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Legendary">Legendary</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Legendary">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Arcana">Arcana</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Arcana">
+                </div>
+                <div class="row">
+                    <label for="filter_dota2_Rarity_Ancient">Ancient</label>
+                    <input class="settings" type="checkbox" id="filter_dota2_Rarity_Ancient">
+                </div>
+            </div>
+            <div>
+                <button id="save_to_file">Сохранить в файл</button>
+                <button id="add_to_base">Добавить в базу Бота</button>
+            </div>
+            <div class="logs-block">
+                <div class="logs">
+                    <div id="log_parser" class="overflow"></div>
+                </div>
+            </div>
+    </div>
+</section></div></body>
