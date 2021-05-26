@@ -192,8 +192,8 @@ body a {
 body button {
   color: #fff;
 }
-body input {
-  /* width: 75px; */
+body.parser input {
+  width: 75px;
   color: #fff;
 }
 body div {
@@ -1177,6 +1177,31 @@ body.report #content input {
   border-radius: 4px;
   margin-bottom: 5px;
 }
+
+body.parser {
+  background: #ededed;
+}
+body.parser header {
+  background: #5b5c61;
+  color: #fff;
+}
+body.parser #content {
+  width: 94%;
+  margin: 0 auto;
+  color: #000;
+}
+body.parser #content #sqlQuery,
+body.parser #content button,
+body.parser #content select,
+body.parser #content input {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+
 .b-popup-settings{
     background: #1b2838;
 }
@@ -1234,7 +1259,7 @@ progress:before {
 }
 
 body.parser #content {
-  width: 45%;
+  width: 680px;
   margin: 0 auto;
   color: #000;
 }
