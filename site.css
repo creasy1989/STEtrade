@@ -196,6 +196,11 @@ body.parser input {
   width: 75px;
   color: #fff;
 }
+
+body input {
+  /* width: 75px; */
+  color: #fff;
+}
 body div {
   color: inherit;
 }
